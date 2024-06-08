@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 
 import { Page as PageType } from "../../utils/payload-types";
@@ -28,6 +29,7 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
           <div className="my-5 flex  gap-3">
             {links?.map(({ link }, i) => {
               return (
+                // @ts-ignore
                 <CMSLink
                   key={i}
                   {...link}

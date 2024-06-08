@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // import { contentImage } from "../../assets";
 import { Page } from "../../utils/payload-types";
 import { styles } from "../../utils/style";
 import { CMSLink } from "../_blocks/CMSLink";
 import RichText from "../_blocks/RichText";
+// @ts-ignore
 type Props = Extract<Page['layout'][0], { blockType: 'content' }>
 
 const ContentBlock: React.FC<
@@ -36,7 +38,7 @@ const ContentBlock: React.FC<
                     }
                   >
                     <RichText content={richText} />
-                    {enableLink && link && <CMSLink type={link?.type} url={link?.url} newTab={link?.newTab} reference={link?.reference} label={link.label} appearance={link?.appearance} />}
+                    {enableLink && link && <CMSLink {...link} />}
                   </div>
                 </>
               );

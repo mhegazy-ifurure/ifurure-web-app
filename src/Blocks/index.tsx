@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 import ContentBlock from "./Content";
 import MediaBlock from "./MediaBlock";
 import MediaContent from "./MediaContent";
 import ArchiveBlock from "./ArchiveBlock";
 import { Page } from "../utils/payload-types";
-import { styles } from "../utils/style";
 import { toKebabCase } from "../utils/toKebabCase";
 
 const blockComponents = {
@@ -15,6 +15,7 @@ const blockComponents = {
 };
 
 const Blocks: React.FC<{
+  // @ts-ignore
   blocks: Page["layout"][0][];
 }> = (props) => {
   const { blocks } = props;

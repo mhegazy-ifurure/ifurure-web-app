@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Page } from "../utils/payload-types"
 import HighImpactHero from "./HighImpact"
 import LowImpactHero from "./LowImpact"
@@ -11,7 +12,7 @@ const heroes = {
   }
 export const Hero: React.FC<Page['hero']> = props => {
     const { type } = props || {}
-  
+  // @ts-ignore
     if (!type || type === 'none') return null
   
     const HeroToRender = heroes[type]

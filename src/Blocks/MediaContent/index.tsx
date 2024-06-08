@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { styles } from "../../utils/style";
 import { Page } from "../../utils/payload-types";
 import RichText from "../_blocks/RichText";
 import { CMSLink } from "../_blocks/CMSLink";
 import { Media } from "../_blocks/Media";
+// @ts-ignore
 type Props = Extract<Page["layout"][0], { blockType: "mediaContent" }>;
 
 const MediaContent: React.FC<

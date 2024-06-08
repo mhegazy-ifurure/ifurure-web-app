@@ -4,8 +4,6 @@ import { Media } from "../Media";
 
 import { Post, Project, Service } from "../../../utils/payload-types";
 import { CMSLink } from "../CMSLink";
-import { Route, Routes } from "react-router-dom";
-import Page from "../../../Components/Page";
 
 export const Card: React.FC<{
   alignItems?: "center";
@@ -18,7 +16,7 @@ export const Card: React.FC<{
 }> = (props) => {
   const { relationTo, title: titleFromProps, doc } = props;
 
-  const { slug, title, media, hero, layout } = doc || {};
+  const { slug, title, media } = doc || {};
 
   const titleToUse = titleFromProps || title;
   const href = `/${relationTo}/${slug}`;

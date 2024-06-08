@@ -29,7 +29,7 @@ function App() {
                 staleTime: 1000,
                 cacheTime: 60000,
                 retry: 3,
-                maxConcurrentQueries: 20,
+                // maxConcurrentQueries: 20,
               },
             },
           })

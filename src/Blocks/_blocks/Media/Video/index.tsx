@@ -5,13 +5,12 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { Props as MediaProps } from '../types'
 
-import classes from './index.module.scss'
 
 export const Video: React.FC<MediaProps> = props => {
   const { videoClassName, resource, onClick } = props
 
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [showFallback ,setShowFallback ] = useState<boolean>()
+  const [ ,setShowFallback ] = useState<boolean>()
 
   useEffect(() => {
     const { current: video } = videoRef
@@ -32,8 +31,8 @@ export const Video: React.FC<MediaProps> = props => {
         autoPlay
         muted
         loop
+        className={videoClassName}
         controls={false}
-        className={[classes.video, videoClassName].filter(Boolean).join(' ')}
         onClick={onClick}
         ref={videoRef}
       >

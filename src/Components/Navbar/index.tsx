@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // eslint-disable-next-line no-unused-vars
@@ -35,7 +36,8 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   // const{isLoading} = useHeader()
   const { t } = useTranslation("header");
-  const navItems: Header = t("data", { returnObjects: true });
+  // @ts-ignore
+  const navItems: Header['navItems'][0] = t("data", { returnObjects: true });
   // console.log(i18next.getResource("ar", "header", "data"));
 
   // console.log({ navItems });

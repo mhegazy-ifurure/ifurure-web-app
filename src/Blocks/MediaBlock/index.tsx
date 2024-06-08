@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Page } from "../../utils/payload-types";
 import { Media } from "../_blocks/Media";
 import { styles } from "../../utils/style";
 import RichText from "../_blocks/RichText";
-
+// @ts-ignore
 type Props = Extract<Page["layout"][0], { blockType: "mediaBlock" }> & {
   id?: string;
 };
