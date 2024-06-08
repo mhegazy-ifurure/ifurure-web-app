@@ -21,6 +21,7 @@ export type Props = {
 
 export const Button: React.FC<Props> = ({
   el: elFromProps = 'link',
+  className,
   label,
   newTab,
   href,
@@ -35,7 +36,7 @@ export const Button: React.FC<Props> = ({
  
 
   const content = (
-    <div >
+    <div className={className}>
       <span >{label}</span>
     </div>
   )
@@ -44,7 +45,7 @@ export const Button: React.FC<Props> = ({
 
   if (el === 'link') {
     return (
-      <Link to={href || ''} {...newTabProps} onClick={onClick}>
+      <Link  to={href || ''} {...newTabProps} onClick={onClick}>
         {content}
       </Link>
     )
