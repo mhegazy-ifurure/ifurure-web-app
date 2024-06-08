@@ -1,0 +1,22 @@
+{
+  "label": "Projects",
+  "SectionTitle": "Projects and Achievements",
+  "projectItems": [
+    {
+      "title": "Meras: Immersive VR CPR Training",
+      "description": "Meras is a revolutionary virtual reality (VR) platform designed to transform CPR training. Experience realistic scenarios with immediate feedback from a virtual manikin, track your progress through detailed dashboards, and gain the confidence to save lives.",
+      "features": [
+        "<strong>Features:</strong>",
+        "<strong> Simulations:</strong> Immerse yourself in true-to-life CPR scenarios.",
+        "<strong>Real-time Feedback:</strong> Receive instant feedback on your technique from the virtual manikin.",
+        "<strong> Comprehensive Dashboards: </strong> your progress and identify areas for improvement. ",
+        "<strong>Confidence Building: </strong> the skills and confidence to perform CPR in real-life emergencies.      "
+      ],
+      "link": {
+        "label": "View project",
+        "path": "#projects"
+      }
+    }
+   
+  ]
+}

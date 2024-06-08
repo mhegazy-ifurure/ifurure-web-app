@@ -1,0 +1,35 @@
+{
+  "Subscribe":"اشتراك",
+
+  "PrivacyPolicy": "سياسة الخصوصية",
+  "TermsOfService": "شروط الخدمة",
+  "CookiesSettings": "ملفات تعريف الارتباط",
+  "SubscribeToOurNewsLetter": "اشترك في نشرتنا الاخبارية",
+  "BySubscribingYouAgreeToWithOurPrivacyPolicy": "بالاشتراك فانك توافق على سياسستنا للخصوصية",
+  "copyrights": "© 2024 شركه المستقبل التفاعلي جميع الحقوق محفوظة  ",
+  "navItems": [
+    {
+      "label": "من نحن",
+      "path": "#about"
+    },
+   
+    {
+      "label": "مجالات عملنا",
+      "path": "#industries"
+    },
+    {
+      "label": "خدماتنا",
+      "path": "#services"
+    },
+    {
+      "label": "لماذا نحن",
+      "path": "#why-us"},
+    {
+      "label": "اعمالنا",
+      "path": "#projects"
+    },{
+      "label": "تواصل معنا",
+      "path": "#contact"
+    }
+  ]
+}

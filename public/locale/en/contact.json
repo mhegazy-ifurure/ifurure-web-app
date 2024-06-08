@@ -1,0 +1,36 @@
+{
+  "SectionTitle": "Contact us",
+  "subText": "Get in Touch – Let's Create the Future Together!",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "email"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "message"
+    },
+    "checkItem": "I accept the Terms",
+    "submit": "Submit"
+  },
+  "contectCard": [
+    {
+      "label": "email",
+      "text": "Send us direct email",
+      "info": "info@ifuture.sa"
+    },
+    {
+      "label": "Phone",
+      "text": "Give us a phone call",
+      "info": "+966596544376"
+    },
+    {
+      "label": "Office",
+      "text": "Riyadh - Saudi Arabia"
+    }
+  ]
+}

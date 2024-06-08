@@ -1,0 +1,51 @@
+{
+  "label": "Services",
+  "SectionTitle": "Services and Solutions",
+  "serviceItems": [
+    {
+      "title": "Specialize in bringing visionary VR projects to life.",
+      "text": "Offering a comprehensive package of creating and developing virtual reality projects and emerging technology to provide the maximum benefit from the latest innovations and technologies.",
+      "links": [
+        {
+          "label": "learn more",
+          "path": "#about"
+        }
+      ]
+    },
+    {
+      "title": "Intelligent systems that enhance efficiency and decision-making.",
+      "text": "Leverage the latest advancements in AI and machine learning to unlock valuable insights, automate processes, and enhance decision-making.",
+      "links": [
+        {
+          "label": "learn more",
+          "path": "#about"
+        }
+      ]
+    }
+   
+  ],
+  "WhyUsSection": {
+    "label": "Why us",
+    "title": "Leading the future of digital transformation together.",
+    "links": [
+      {
+        "label": "Consult Our experts",
+        "path": "#contact"
+      }
+    ],
+    "whyUsData": [
+      {
+        "title": "Solutions Tailored to Your Business Needs.",
+        "text": "We understand that your business is unique. Our bespoke solutions are designed to meet your specific goals and requirements, ensuring they align perfectly with your vision and objectives."
+      },
+      {
+        "title": "Immersive Experiences for Your Customers.",
+        "text": "Our VR projects provide highly immersive and interactive experiences that captivate your customers, enhancing your training programs, educational initiatives, marketing campaigns, and entertainment offerings."
+      },
+      {
+        "title": "Comprehensive Support for Your Success.",
+        "text": "From initial consultation to deployment and ongoing maintenance, we provide comprehensive support at every stage, ensuring a smooth and seamless implementation of your Virtual Reality & Augmented Reality  solutions."
+      }
+    ]
+  }
+}

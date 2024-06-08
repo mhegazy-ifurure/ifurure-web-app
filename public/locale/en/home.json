@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "title": "Revolutionize Virtual Reality & Augmented Reality innovations.",
+    "subTitle": "Using technology as our focus to provide advanced and sustainable solutions that support companies and institutions in their journey towards achieving their goals effectively.",
+
+    "links": [
+      {
+        "label": "Consult our Experts",
+        "path": "#contact"
+      },
+      {
+        "label": "Explore our solutions",
+        "path": "#services"
+      }
+    ]
+  },
+
+  "content1": {
+    "title": "How to Keeping Pace with Technological Change, Navigating Complexity and Uncertainty and Driving Tangible Business Results",
+    "contentList1": [
+      "In today's rapidly evolving digital landscape, staying on top of the latest technological developments can be a challenge for individuals and businesses alike. Whether it's understanding emerging technologies, implementing new solutions, or adapting to industry trends, the pace of change can be overwhelming for many.",
+      "Digital innovation often brings with it complexity and uncertainty, especially for those exploring new technologies or embarking on digital transformation journeys. Whether it's understanding the complexities of blockchain, AI, or IoT, or navigating regulatory frameworks and ethical considerations, individuals and organizations may feel overwhelmed by the challenges ahead.",
+      "Ultimately, individuals and companies seek tangible results from their investments in digital innovation. Whether it's improving operational efficiency, enhancing customer experiences, or driving revenue growth, the pressure to deliver measurable business impact is always there."
+    ],
+
+    "contentList2": [
+      "<strong>Quick Adapting :</strong>  Continuously educate yourself and your team on emerging technologies, industry trends, and market developments, and attend conferences to stay ahead of the curve. Be proactive in identifying opportunities to leverage new technologies that can enhance your business operations, improve customer experiences, and drive innovation.",
+      "<strong>Collaboration and Partnerships: </strong> Foster collaboration with technology experts, industry peers, and strategic partners to navigate complexity and leverage collective expertise. Embrace open dialogue, knowledge sharing, and cross-functional teamwork to tackle challenges, explore opportunities, and co-create solutions that deliver tangible business results. By pooling resources and expertise, you can accelerate innovation, mitigate risks, and unlock new growth opportunities.",
+      "Maximize the value and impact of the new solutions while minimizing the challenges and uncertainties associated with integrating VR, AI, and gaming technologies into your business or project."
+    ],
+
+    "contentEnd": "At INTERACTIVE FUTURE for information technology, we Align technology investments with strategic business goals and customer needs to ensure meaningful impact and ROI to your business, putting the customer at the center of our technology strategy, ensuring you can drive sustainable growth, loyalty, and success."
+  },
+
+  "about": {
+    "label": "About Interactive Future",
+    "title": "Interactive Future.",
+    "subtext":[ "Is a Virtual Reality & Augmented Reality  development company based in  Riyadh, Saudi Arabia. Our mission is to lead the charge in envisioning and creating tomorrow's world through groundbreaking technology solutions.At Interactive Future, innovation is more than a buzzword—it's our driving force.We embrace curiosity, creativity, and collaboration to unlock new opportunities and push boundaries.","Innovation  part of our identity, and we always try to provide best solutions that attract celebrities."],
+    "subContent": [
+      {
+        "title": "Vission",
+        "text": "To be the leading force in Virtual Reality & Augmented Reality  innovation, empowering businesses to explore new horizons and achieve unparalleled growth."
+      },
+      {
+        "title": "Our goal.",
+        "text": "To design and deliver exceptional Virtual Reality & Augmented Reality  projects that enhance experiences, streamline operations, and foster creativity across diverse industries."
+      }
+    ],
+
+    "links":[ {
+      "label": "Consult our Experts",
+      "path": "#contact"
+    }]
+  }
+}

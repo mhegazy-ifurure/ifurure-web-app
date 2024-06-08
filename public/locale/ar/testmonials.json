@@ -1,0 +1,59 @@
+{
+  "label": "شهادات",
+  "SectionTitle": "اراء عملائنا",
+  "feedbackData": [
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    },
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    },
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    }
+  ],
+  "howItWorks": {
+    "label": "ثلاثة خطوات بسيطة",
+    "title": "كيف نعمل ",
+    "listItems": [
+      {
+        "title": "استشر خبرائنا",
+        "description": "استكشف مجموعتنا المتنوعة من الحلول والخدمات المبتكرة، واستشر خبرائنا."
+      },
+      {
+        "title": "التعاون لوضع المفهوم",
+        "description": "نبدأ بفهم أهدافك واحتياجاتك وأفكارك. سيعمل فريقنا معك بشكل وثيق لتحديد نطاق المشروع وتحديد متطلباتك المحددة."
+      },
+      {
+        "title": "التنفيذ و الاطلاق",
+        "description": "بمجرد اكتمال المشروع، سنساعدك في نشر ودمج حلول الواقع الافتراضي والذكاء الاصطناعي في أنظمتك الحالية. نحن نضمن انتقالًا سلسًا."
+      }
+    ]
+  },
+  "endContent": {
+    "intro": "في <strong>شركة المستقبل التفاعلي لتقنية المعلومات,</strong> الامر بسيط - <strong>استكشاف, تعاون ,نجاح</strong>",
+    "text": "لنكون شركاء في تشكيل الابتكار و التحول الرقمي المستقبلي معًا.",
+    "link": {
+      "label": "استشر خبرائنا",
+      "path": "#contact"
+    }
+  }
+}

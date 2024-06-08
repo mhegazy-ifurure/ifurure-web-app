@@ -1,0 +1,27 @@
+{
+  "navItems": [
+    {
+      "label": "من نحن",
+      "path": "about"
+    },
+   
+    {
+      "label": "مجالات عملنا",
+      "path": "industries"
+    },
+    {
+      "label": "خدماتنا",
+      "path": "services"
+    },
+    {
+      "label": "لماذا نحن",
+      "path": "why-us"},
+    {
+      "label": "اعمالنا",
+      "path": "projects"
+    },{
+      "label": "تواصل معنا",
+      "path": "contact"
+    }
+  ]
+}

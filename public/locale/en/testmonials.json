@@ -1,0 +1,59 @@
+{
+  "label": "Testimonials",
+  "SectionTitle": "Our clients words",
+  "feedbackData": [
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    },
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    },
+    {
+      "rate": "5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+      "author": {
+        "name": "Name Surname",
+        "position": "Position",
+        "companyName": "Company name"
+      }
+    }
+  ],
+  "howItWorks": {
+    "label": "Simple 3 Steps",
+    "title": "How it works ",
+    "listItems": [
+      {
+        "title": "Explore & Consult our Experts",
+        "description": "Exploring our range of innovative solutions and services, learn about our  personalized guidance and consult our experts."
+      },
+      {
+        "title": "Collaborate and Customize",
+        "description": "Collaborate with our team of experts to customize solutions tailored to your specific needs and objectives."
+      },
+      {
+        "title": "Implement and Succeed",
+        "description": "Leverage our technology platforms, tools, and resources to drive digital transformation and innovation within your organization."
+      }
+    ]
+  },
+  "endContent": {
+    "intro": "With <strong>INTERACTIVE FUTURE for information technology, </strong> it's simple: <strong>Explore, Collaborate, and Succeed.</strong>",
+    "text": "Let us be partners in shaping future innovation and digital transformation together.",
+    "link": {
+      "label": "Consult our Experts",
+      "path": "#contact"
+    }
+  }
+}
