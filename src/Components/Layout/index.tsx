@@ -39,7 +39,6 @@ const Layout = () => {
     servicesLoading ||
     pageLoading
   ) {
-    console.log("loading");
 
     return <Loading />;
   }
