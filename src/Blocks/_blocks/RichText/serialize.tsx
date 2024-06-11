@@ -160,7 +160,7 @@ console.log(alignText);
         );
       case "li":
         return (
-          <li className="mb-2  " key={i}>
+          <li className={"mb-2  "+alignText} key={i}>
             {serialize(node.children)}
           </li>
         );
