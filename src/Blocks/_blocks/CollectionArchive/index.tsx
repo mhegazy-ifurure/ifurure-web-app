@@ -27,8 +27,39 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    // lazyLoad: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    waitForAnimate: false,
+    cssEase: "linear",
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const { t } = useTranslation(relationTo);
@@ -41,11 +72,11 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     <div className={[className].filter(Boolean).join(" ")}>
       <div />
 
-      <div className={styles.paddingX}>
+      <div className={styles.paddingX + " relative"}>
         <Slider {...settings}>
           {collections.map((result, index) => {
             return (
-              <div>
+              <div >
                 <Card key={index} doc={result} relationTo={relationTo} />
               </div>
             );
