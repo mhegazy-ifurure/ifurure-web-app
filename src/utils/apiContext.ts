@@ -66,7 +66,6 @@ const useServices = () => {
       },
     });
   });
-  console.log({ ar, en }, isError, isLoading, "services");
 
   i18next.addResource("en", "services", "data", en?.data.docs);
   i18next.addResource("ar", "services", "data", ar?.data.docs);
@@ -125,7 +124,6 @@ const useProjects = () => {
       },
     });
   });
-  console.log({ ar, en }, isError, isLoading);
 
   i18next.addResource("en", "projects", "data", en?.data.docs);
   i18next.addResource("ar", "projects", "data", ar?.data.docs);

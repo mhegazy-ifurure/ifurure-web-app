@@ -28,7 +28,6 @@ const MediaContent: React.FC<
             content.length > 0 &&
             content.map((item, index) => {
               const { enableLink, richText, link, size } = item;
-console.log({link});
 
               return (
                 <>

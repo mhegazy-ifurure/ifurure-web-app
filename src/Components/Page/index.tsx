@@ -3,8 +3,7 @@ import Blocks from "../../Blocks";
 
 const Page = ({ page }) => {
   const { hero, layout } = page;
-  console.log({hero});
-  
+
   return (
     <>
       <Hero {...hero} />

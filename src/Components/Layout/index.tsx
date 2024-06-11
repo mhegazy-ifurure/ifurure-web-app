@@ -32,8 +32,6 @@ const Layout = () => {
   const { t: tProjects } = useTranslation("projects");
   const projects: Project[] = tProjects("data", { returnObjects: true });
 
-  
-
   if (
     headerLoading ||
     projectsLoading ||
@@ -41,8 +39,8 @@ const Layout = () => {
     servicesLoading ||
     pageLoading
   ) {
-    console.log('loading');
-    
+    console.log("loading");
+
     return <Loading />;
   }
 
