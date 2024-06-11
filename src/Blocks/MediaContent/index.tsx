@@ -19,7 +19,7 @@ const MediaContent: React.FC<
   return (
     <div
       className={
-        styles.contentMargin + " grid grid-cols-1 md:grid-cols-2 lg:my-10 my-5"
+        styles.contentMargin + " grid grid-cols-1 md:grid-cols-2 lg:my-10 my-5 "+styles.padding
       }
     >
       <div className={" order-last md:order-first"}>
@@ -28,6 +28,7 @@ const MediaContent: React.FC<
             content.length > 0 &&
             content.map((item, index) => {
               const { enableLink, richText, link, size } = item;
+console.log({link});
 
               return (
                 <>
@@ -45,13 +46,10 @@ const MediaContent: React.FC<
                   >
                     <RichText content={richText} />
                     {enableLink && link && (
+                      
                       <CMSLink
-                        type={link?.type}
-                        url={link?.url}
-                        newTab={link?.newTab}
-                        reference={link?.reference}
-                        label={link.label}
-                        appearance={link?.appearance}
+                      className={styles.secondaryBtn}
+                        {...link}
                       />
                     )}
                   </div>

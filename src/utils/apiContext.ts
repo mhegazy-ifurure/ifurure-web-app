@@ -4,18 +4,13 @@ import i18next from "i18next";
 import { useQuery } from "react-query";
 
 export const useApi = () => {
-  useHeader();
-  useProjects()
-  usePosts();
-  const { isLoading:pageLoading } = usePages();
+  const { isLoading: headerLoading } = useHeader();
+  const { isLoading: projectsLoading } = useProjects();
+  const { isLoading: postsLoading } = usePosts();
+  const { isLoading: servicesLoading } = useServices();
+  const { isLoading: pageLoading } = usePages();
 
-    useServices();
-  
- 
-    useProjects();
-  
-
-  return { isLoading :pageLoading };
+  return { headerLoading ,projectsLoading,postsLoading, servicesLoading,pageLoading};
 };
 
 const useHeader = () => {
@@ -40,7 +35,6 @@ const useHeader = () => {
       },
     });
   });
-  console.log({ ar, en }, isError, isLoading);
 
   i18next.addResource("en", "header", "data", en?.data.navItems);
   i18next.addResource("ar", "header", "data", ar?.data.navItems);
@@ -72,12 +66,10 @@ const useServices = () => {
       },
     });
   });
-  console.log({ ar, en }, isError, isLoading);
+  console.log({ ar, en }, isError, isLoading, "services");
 
   i18next.addResource("en", "services", "data", en?.data.docs);
   i18next.addResource("ar", "services", "data", ar?.data.docs);
-
-  // console.log(i18next.t("data"));
 
   return { isLoading, isError };
 };
@@ -104,12 +96,9 @@ const usePosts = () => {
       },
     });
   });
-  console.log({ ar, en }, isError, isLoading);
 
   i18next.addResource("en", "posts", "data", en?.data.docs);
   i18next.addResource("ar", "posts", "data", ar?.data.docs);
-
-  // console.log(i18next.t("data"));
 
   return { isLoading, isError };
 };
@@ -141,8 +130,6 @@ const useProjects = () => {
   i18next.addResource("en", "projects", "data", en?.data.docs);
   i18next.addResource("ar", "projects", "data", ar?.data.docs);
 
-  // console.log(i18next.t("data"));
-
   return { isLoading, isError };
 };
 
@@ -168,12 +155,9 @@ const usePages = () => {
       },
     });
   });
-  // console.log({ ar, en }, isError, isLoading);
 
   i18next.addResource("en", "pages", "data", en?.data.docs);
   i18next.addResource("ar", "pages", "data", ar?.data.docs);
-
-  // console.log(i18next.t("data"));
 
   return { isLoading, isError };
 };

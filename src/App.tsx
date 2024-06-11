@@ -1,5 +1,4 @@
 import { I18nextProvider } from "react-i18next";
-import Layout from "./Components/Layout";
 import i18next from "./utils/i18n";
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -7,8 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Loading from "./Components/Loading";
+import Layout from "./Components/Layout/index";
 // import "./_css/app.scss";
-
 // import { Suspense } from "react";
 
 function App() {
@@ -25,10 +25,10 @@ function App() {
           new QueryClient({
             defaultOptions: {
               queries: {
-                refetchOnWindowFocus: false,
-                staleTime: 1000,
+                refetchOnWindowFocus: true,
+                staleTime: 10000,
                 cacheTime: 60000,
-                retry: 3,
+                retry: 5,
                 // maxConcurrentQueries: 20,
               },
             },

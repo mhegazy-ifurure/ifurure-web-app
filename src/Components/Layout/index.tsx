@@ -15,7 +15,13 @@ import {
 } from "../../utils/payload-types";
 
 const Layout = () => {
-  const { isLoading } = useApi();
+  const {
+    headerLoading,
+    projectsLoading,
+    postsLoading,
+    servicesLoading,
+    pageLoading,
+  } = useApi();
   const { t: tPages } = useTranslation("pages");
   const pages: PageType[] = tPages("data", { returnObjects: true });
 
@@ -26,18 +32,27 @@ const Layout = () => {
   const { t: tProjects } = useTranslation("projects");
   const projects: Project[] = tProjects("data", { returnObjects: true });
 
-  console.log({ pages, projects, posts, services });
+  console.log({ pages, posts, services, projects });
+  console.log({
+    headerLoading,
+    projectsLoading,
+    postsLoading,
+    servicesLoading,
+    pageLoading,
+  });
 
-  if (isLoading) {
+  if (
+    headerLoading ||
+    projectsLoading ||
+    postsLoading ||
+    servicesLoading ||
+    pageLoading
+  ) {
+    console.log('loading');
+    
     return <Loading />;
   }
 
-
-
-
-
-
-  
   return (
     <>
       <Helmet>
@@ -72,7 +87,7 @@ entertainment, health care & more, in Saudi Arabia."
 
       <Navbar />
       <main>
-        {pages && (
+        {pages && pages.length > 0 && (
           <>
             <Routes>
               {pages.map((page, i) => {
@@ -84,8 +99,7 @@ entertainment, health care & more, in Saudi Arabia."
                   />
                 );
               })}
-
-              {posts && (
+              {posts && posts.length > 0 && (
                 <>
                   {posts.map((post, i) => {
                     return (
@@ -103,7 +117,7 @@ entertainment, health care & more, in Saudi Arabia."
                 </>
               )}
 
-              {services && (
+              {/* {services && services.length > 0 && (
                 <>
                   {services.map((service, i) => {
                     return (
@@ -122,9 +136,9 @@ entertainment, health care & more, in Saudi Arabia."
                     );
                   })}
                 </>
-              )}
+              )} */}
 
-              {projects && (
+              {projects && projects.length && (
                 <>
                   {projects.map((project, i) => {
                     return (
