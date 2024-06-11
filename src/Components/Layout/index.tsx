@@ -32,14 +32,7 @@ const Layout = () => {
   const { t: tProjects } = useTranslation("projects");
   const projects: Project[] = tProjects("data", { returnObjects: true });
 
-  console.log({ pages, posts, services, projects });
-  console.log({
-    headerLoading,
-    projectsLoading,
-    postsLoading,
-    servicesLoading,
-    pageLoading,
-  });
+  
 
   if (
     headerLoading ||
@@ -117,7 +110,7 @@ entertainment, health care & more, in Saudi Arabia."
                 </>
               )}
 
-              {/* {services && services.length > 0 && (
+              {services && services.length > 0 && (
                 <>
                   {services.map((service, i) => {
                     return (
@@ -136,7 +129,7 @@ entertainment, health care & more, in Saudi Arabia."
                     );
                   })}
                 </>
-              )} */}
+              )}
 
               {projects && projects.length && (
                 <>
