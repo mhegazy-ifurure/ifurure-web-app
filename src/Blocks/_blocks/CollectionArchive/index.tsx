@@ -72,11 +72,11 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     <div className={[className].filter(Boolean).join(" ")}>
       <div />
 
-      <div className={styles.paddingX + " relative"}>
+      <div className={" relative"}>
         <Slider {...settings}>
           {collections.map((result, index) => {
             return (
-              <div >
+              <div className="px-2 flex justify-center items-center" >
                 <Card key={index} doc={result} relationTo={relationTo} />
               </div>
             );
