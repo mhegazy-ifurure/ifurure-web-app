@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Loading from "./Components/Loading";
 import Layout from "./Components/Layout/index";
 // import "./_css/app.scss";
 // import { Suspense } from "react";
