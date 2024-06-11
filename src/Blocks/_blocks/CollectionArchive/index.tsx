@@ -7,7 +7,6 @@ import { Card } from "../Card";
 
 import { Post, Project, Service } from "../../../utils/payload-types";
 import { useTranslation } from "react-i18next";
-import { styles } from "../../../utils/style";
 import Slider from "react-slick";
 
 export type Props = {
@@ -76,7 +75,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
         <Slider {...settings}>
           {collections.map((result, index) => {
             return (
-              <div className="px-2 flex justify-center items-center" >
+              <div className="px-2 flex justify-center items-center">
                 <Card key={index} doc={result} relationTo={relationTo} />
               </div>
             );

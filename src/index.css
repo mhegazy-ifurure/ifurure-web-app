@@ -775,44 +775,12 @@ video {
   height: 68px;
 }
 
-.h-full{
-  height: 100%;
-}
-
-.h-3{
-  height: 0.75rem;
-}
-
-.h-32{
-  height: 8rem;
-}
-
-.min-h-full{
-  min-height: 100%;
+.min-h-16{
+  min-height: 4rem;
 }
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-5{
-  min-height: 1.25rem;
-}
-
-.min-h-32{
-  min-height: 8rem;
-}
-
-.min-h-24{
-  min-height: 6rem;
-}
-
-.min-h-1{
-  min-height: 0.25rem;
-}
-
-.min-h-16{
-  min-height: 4rem;
 }
 
 .\!w-px{
@@ -861,30 +829,6 @@ video {
 
 .max-w-7xl{
   max-width: 80rem;
-}
-
-.max-w-\[24rem\]{
-  max-width: 24rem;
-}
-
-.max-w-\[rem\]{
-  max-width: rem;
-}
-
-.max-w-\[50rem\]{
-  max-width: 50rem;
-}
-
-.max-w-\[36rem\]{
-  max-width: 36rem;
-}
-
-.max-w-\[32rem\]{
-  max-width: 32rem;
-}
-
-.max-w-\[30rem\]{
-  max-width: 30rem;
 }
 
 .max-w-\[28rem\]{
@@ -1217,16 +1161,12 @@ video {
   padding: 0px !important;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
-.p-6{
-  padding: 1.5rem;
-}
-
 .p-2{
   padding: 0.5rem;
+}
+
+.p-3{
+  padding: 0.75rem;
 }
 
 .px-2{
@@ -1308,17 +1248,16 @@ video {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .align-\[-0\.125em\]{
   vertical-align: -0.125em;
 }
 
 .font-sans{
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-\[12px\]{
@@ -1783,6 +1722,11 @@ video {
   .md\:my-24{
     margin-top: 6rem;
     margin-bottom: 6rem;
+  }
+
+  .md\:my-5{
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   .md\:mb-2{
