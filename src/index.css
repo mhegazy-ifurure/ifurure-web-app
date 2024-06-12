@@ -1693,10 +1693,6 @@ video {
     order: -9999;
   }
 
-  .md\:col-span-12{
-    grid-column: span 12 / span 12;
-  }
-
   .md\:col-span-4{
     grid-column: span 4 / span 4;
   }
@@ -1755,6 +1751,10 @@ video {
 
   .md\:w-2\/3{
     width: 66.666667%;
+  }
+
+  .md\:w-3\/4{
+    width: 75%;
   }
 
   .md\:grid-cols-2{

@@ -5,7 +5,7 @@ import { styles } from "../../utils/style";
 import { CMSLink } from "../_blocks/CMSLink";
 import RichText from "../_blocks/RichText";
 // @ts-ignore
-type Props = Extract<Page['layout'][0], { blockType: 'content' }>
+type Props = Extract<Page["layout"][0], { blockType: "content" }>;
 
 const ContentBlock: React.FC<
   Props & {
@@ -27,17 +27,20 @@ const ContentBlock: React.FC<
                 <>
                   <div
                     key={index}
-                    className={
-                   `  ${  size == "half"
+                    className={`  ${
+                      size == "half"
                         ? " col-span-12  md:col-span-6"
                         : size == "oneThird"
                         ? " col-span-12  md:col-span-4"
                         : size == "twoThirds"
                         ? " col-span-12  md:col-span-8"
-                        : " col-span-12  md:col-span-12"}`
-                    }
+                        : size == "full-wrapped"
+                        ? " col-span-12 md:w-3/4 mx-auto  "
+                        : " col-span-12  "
+                    }`}
                   >
                     <RichText content={richText} />
+                    {console.log(link)}
                     {enableLink && link && <CMSLink {...link} />}
                   </div>
                 </>
