@@ -23,7 +23,7 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
         }}
         className={` w-full min-h-screen relative flex bg-cover bg-center flex-col justify-end overflow-hidden `}
       >
-        <div className=" md:w-2/3 md:px-10 px-5 md:mb-20 mb-5 ">
+        <div className=" md:w-1/2 md:px-16 px-6 mb-5 ">
           <RichText className={" text-white "} content={richText} />
 
           <div className="my-5 flex  gap-3">

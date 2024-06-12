@@ -1751,6 +1751,10 @@ video {
     margin-top: 2.5rem;
   }
 
+  .md\:mb-10{
+    margin-bottom: 2.5rem;
+  }
+
   .md\:flex{
     display: flex;
   }
@@ -1765,6 +1769,14 @@ video {
 
   .md\:w-3\/4{
     width: 75%;
+  }
+
+  .md\:w-1\/3{
+    width: 33.333333%;
+  }
+
+  .md\:w-1\/2{
+    width: 50%;
   }
 
   .md\:grid-cols-2{
@@ -1804,6 +1816,11 @@ video {
   .md\:py-4{
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .md\:px-16{
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .md\:pe-20{
