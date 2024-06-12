@@ -972,6 +972,16 @@ video {
   row-gap: 2rem;
 }
 
+.gap-x-10{
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.gap-x-24{
+  -moz-column-gap: 6rem;
+       column-gap: 6rem;
+}
+
 .\!overflow-hidden{
   overflow: hidden !important;
 }
