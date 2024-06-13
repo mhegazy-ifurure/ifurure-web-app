@@ -5,6 +5,7 @@ import { Text } from "slate";
 import { CMSLink } from "../CMSLink";
 import { Label } from "../Label";
 import { LargeBody } from "../LargeBody";
+import { BreackLine } from "../BreakLine";
 
 // eslint-disable-next-line no-use-before-define
 type Children = Leaf[];
@@ -183,7 +184,9 @@ console.log(alignText);
       case "large-body": {
         return <LargeBody key={i}>{serialize(node?.children)}</LargeBody>;
       }
-
+      case "break-line": {
+        return <BreackLine key={i} />
+      }
       default:
         return <p key={i}>{serialize(node?.children)}</p>;
     }
