@@ -41,7 +41,7 @@ const ContentBlock: React.FC<
                   >
                     <RichText content={richText} />
                     {console.log(link)}
-                    {enableLink && link && <CMSLink {...link} />}
+                    {enableLink && link && <CMSLink className={styles.secondaryBtn} {...link} />}
                   </div>
                 </>
               );
