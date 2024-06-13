@@ -980,12 +980,20 @@ video {
   row-gap: 2rem;
 }
 
+.overflow-auto{
+  overflow: auto;
+}
+
 .\!overflow-hidden{
   overflow: hidden !important;
 }
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-clip{
+  overflow: clip;
 }
 
 .\!whitespace-nowrap{
@@ -1719,6 +1727,10 @@ video {
 
   .md\:col-span-8{
     grid-column: span 8 / span 8;
+  }
+
+  .md\:col-span-12{
+    grid-column: span 12 / span 12;
   }
 
   .md\:mx-2{

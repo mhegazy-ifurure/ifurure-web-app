@@ -26,7 +26,7 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
         <div className=" md:w-1/2 md:px-16 px-6 mb-5 ">
           <RichText className={" text-white "} content={richText} />
 
-          <div className="my-5 flex  gap-3">
+          <div className="my-5 flex  flex-wrap gap-3">
             {links?.map(({ link }, i) => {
               return (
                 // @ts-ignore

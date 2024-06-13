@@ -10,7 +10,7 @@ const RichText: React.FC<{ className?: string; content: any }> = ({ className, c
   }
 
   return (
-    <div className={['w-full text-wrap',className].filter(Boolean).join(' ')}>
+    <div className={['w-full',className].filter(Boolean).join(' ')}>
       {serialize(content)}
     </div>
   )
