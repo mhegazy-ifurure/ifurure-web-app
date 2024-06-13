@@ -17,7 +17,7 @@ const ContentBlock: React.FC<
   return (
     <>
       <div className={styles.padding}>
-        <div className="grid grid-cols-12 gap-x-24 gap-y-8 ">
+        <div className=" grid grid-cols-12 gap-x-24 gap-y-8 ">
           {columns &&
             columns.length > 0 &&
             columns.map((col, index) => {
