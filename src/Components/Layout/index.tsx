@@ -42,7 +42,6 @@ const Layout = () => {
 
     return <Loading />;
   }
-console.log(pages);
 
   return (
     <>

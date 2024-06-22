@@ -82,7 +82,6 @@ let alignText=''
           break;
       }
     }
-console.log(alignText);
 
     switch (node.type) {
       case "h1":

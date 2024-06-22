@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prefer-const */
 
@@ -8,6 +9,9 @@ import { Card } from "../Card";
 import { Post, Project, Service } from "../../../utils/payload-types";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+import CardSlider from "../../Slider";
 
 export type Props = {
   className?: string;
@@ -20,46 +24,16 @@ export type Props = {
 };
 
 export const CollectionArchive: React.FC<Props> = (props) => {
-  const { className, relationTo } = props;
-
-  let settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    // lazyLoad: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    waitForAnimate: false,
-    cssEase: "linear",
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const { className, relationTo, limit } = props;
+  // // @ts-ignore
+  // let settings ={
+  //   className: "center",
+  //   centerMode: true,
+  //   infinite: true,
+  //   centerPadding: "60px",
+  //   slidesToShow: 3,
+  //   speed: 500
+  // }
 
   const { t } = useTranslation(relationTo);
 
@@ -69,18 +43,10 @@ export const CollectionArchive: React.FC<Props> = (props) => {
 
   return (
     <div className={[className].filter(Boolean).join(" ")}>
-      <div />
+      
 
       <div className={" relative"}>
-        <Slider {...settings}>
-          {collections.map((result, index) => {
-            return (
-              <div className="px-2 flex justify-center items-center">
-                <Card key={index} doc={result} relationTo={relationTo} />
-              </div>
-            );
-          })}
-        </Slider>
+        <CardSlider cards={collections} relationTo={relationTo} slidesToShow={limit}/>
       </div>
     </div>
   );

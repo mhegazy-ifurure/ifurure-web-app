@@ -731,6 +731,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-5{
   margin-top: 1.25rem;
 }
@@ -845,6 +849,10 @@ video {
 
 .flex-shrink{
   flex-shrink: 1;
+}
+
+.flex-shrink-0{
+  flex-shrink: 0;
 }
 
 .flex-grow{
@@ -1680,6 +1688,10 @@ video {
 }
 
 @media (min-width: 640px){
+  .sm\:w-1\/2{
+    width: 50%;
+  }
+
   .sm\:px-16{
     padding-left: 4rem;
     padding-right: 4rem;
