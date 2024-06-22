@@ -109,7 +109,7 @@ const ContactUsForm: React.FC<{ form: ContactForm }> = ({ form }) => {
             />
           </div>
           <div className=" ">
-            <button type="submit" className={styles.mainBtn}>
+            <button type="submit" className={styles.teritaryBtn}>
               {form.submit}
             </button>
           </div>

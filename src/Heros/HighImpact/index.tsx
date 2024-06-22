@@ -33,7 +33,7 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
                 <CMSLink
                   key={i}
                   {...link}
-                  className={i % 2 == 0 ? styles.mainBtn : styles.primaryBtn}
+                  className={i % 2 == 0 ? styles.teritaryBtn : styles.primaryBtn}
                 />
               );
             })}

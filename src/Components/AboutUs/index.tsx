@@ -61,7 +61,7 @@ const StaticMediaContentBlock: React.FC<ContentSectionProps> = ({ content }) => 
           ))}
           <div className="flex gap-4 mt-10 items-center">
             {links?.map((item, i) => (
-              <a key={i} href={item.path} className={styles.mainBtn}>
+              <a key={i} href={item.path} className={styles.teritaryBtn}>
                 {item.label}
               </a>
             ))}

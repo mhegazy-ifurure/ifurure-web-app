@@ -36,7 +36,7 @@ const WhyUs: React.FC<{ whyUs: WhyUsSection }> = ({ whyUs }) => {
               <a
                 key={i}
                 href="#"
-                className={styles.mainBtn}
+                className={styles.teritaryBtn}
               >
                 {item.label}
               </a>
@@ -68,7 +68,7 @@ const WhyUs: React.FC<{ whyUs: WhyUsSection }> = ({ whyUs }) => {
               <a
                 key={i}
                 href="#"
-                className={styles.mainBtn}
+                className={styles.teritaryBtn}
               >
                 {item.label}
               </a>
