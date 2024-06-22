@@ -88,7 +88,7 @@ console.log(alignText);
       case "h1":
         return (
           <h1
-            className={"  text-[40px] mb-5 leading-[120%] " +alignText}
+            className={" text-[32px] md:text-[40px] mb-5 leading-[120%] " +alignText}
             key={i}
           >
             {serialize(node?.children)}
@@ -97,7 +97,7 @@ console.log(alignText);
       case "h2":
         return (
           <h2
-            className={" text-[36px] mb-4 leading-[120%] " +alignText}
+            className={" text-[28px] md:text-[36px] mb-4 leading-[120%] " +alignText}
             key={i}
           >
             {serialize(node?.children)}
@@ -106,7 +106,7 @@ console.log(alignText);
       case "h3":
         return (
           <h3
-            className={"text-[32px] mb-3 leading-[120%] "+alignText}
+            className={"text-[26px] md:text-[32px] mb-3 leading-[120%] "+alignText}
             key={i}
           >
             {serialize(node?.children)}
@@ -115,7 +115,7 @@ console.log(alignText);
       case "h4":
         return (
           <h4
-            className={"text-[28px] mb-3 leading-[130%] "+alignText}
+            className={"text-[24px] md:text-[28px] mb-3 leading-[130%] "+alignText}
             key={i}
           >
             {serialize(node?.children)}
@@ -124,7 +124,7 @@ console.log(alignText);
       case "h5":
         return (
           <h5
-            className={"text-[24px]  mb-3 leading-[140%] "+alignText}
+            className={"text-[22px] md:text-[24px]  mb-3 leading-[140%] "+alignText}
             key={i}
           >
             {serialize(node?.children)}

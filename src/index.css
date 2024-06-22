@@ -638,10 +638,6 @@ video {
   grid-column: span 8 / span 8;
 }
 
-.col-span-1{
-  grid-column: span 1 / span 1;
-}
-
 .\!-m-px{
   margin: -1px !important;
 }
@@ -980,10 +976,6 @@ video {
   row-gap: 2rem;
 }
 
-.overflow-auto{
-  overflow: auto;
-}
-
 .\!overflow-hidden{
   overflow: hidden !important;
 }
@@ -992,20 +984,12 @@ video {
   overflow: hidden;
 }
 
-.overflow-clip{
-  overflow: clip;
-}
-
 .\!whitespace-nowrap{
   white-space: nowrap !important;
 }
 
 .whitespace-break-spaces{
   white-space: break-spaces;
-}
-
-.text-wrap{
-  text-wrap: wrap;
 }
 
 .text-nowrap{
@@ -1304,8 +1288,16 @@ video {
   font-size: 20px;
 }
 
+.text-\[22px\]{
+  font-size: 22px;
+}
+
 .text-\[24px\]{
   font-size: 24px;
+}
+
+.text-\[26px\]{
+  font-size: 26px;
 }
 
 .text-\[28px\]{
@@ -1316,17 +1308,9 @@ video {
   font-size: 32px;
 }
 
-.text-\[40px\]{
-  font-size: 40px;
-}
-
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[36px\]{
-  font-size: 36px;
 }
 
 .font-black{
@@ -1717,6 +1701,10 @@ video {
     order: -9999;
   }
 
+  .md\:col-span-12{
+    grid-column: span 12 / span 12;
+  }
+
   .md\:col-span-4{
     grid-column: span 4 / span 4;
   }
@@ -1727,10 +1715,6 @@ video {
 
   .md\:col-span-8{
     grid-column: span 8 / span 8;
-  }
-
-  .md\:col-span-12{
-    grid-column: span 12 / span 12;
   }
 
   .md\:mx-2{
@@ -1785,12 +1769,12 @@ video {
     width: 75%;
   }
 
-  .md\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:gap-10{
@@ -1844,28 +1828,24 @@ video {
     font-size: 18px;
   }
 
-  .md\:text-\[20px\]{
-    font-size: 20px;
-  }
-
   .md\:text-\[24px\]{
     font-size: 24px;
+  }
+
+  .md\:text-\[28px\]{
+    font-size: 28px;
   }
 
   .md\:text-\[32px\]{
     font-size: 32px;
   }
 
+  .md\:text-\[36px\]{
+    font-size: 36px;
+  }
+
   .md\:text-\[40px\]{
     font-size: 40px;
-  }
-
-  .md\:text-\[48px\]{
-    font-size: 48px;
-  }
-
-  .md\:text-\[0px\]{
-    font-size: 0px;
   }
 }
 
