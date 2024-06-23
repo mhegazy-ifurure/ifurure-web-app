@@ -28,13 +28,13 @@ const styles: Styles = {
   sectionSubText: " text-[14px]   tracking-wider",
   contentMargin: "my-5 md:my-10 lg:my-30 ",
   afterElement: `relative after:contents[] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:bg-secondray`,
-  teritaryBtn:
+  primaryBtn:
     "md:my-5 my-2 inline-block bg-teritary border-teritary border md:text-[16px] text-[14px] text-white px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
 
   secondaryBtn:
     "md:my-5 my-2 inline-block border-secondray border md:text-[16px] text-[14px] px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
 
-  primaryBtn:
+    teritaryBtn:
     " md:my-5 my-2 inline-block border-white border text-white md:text-[16px] text-[14px] px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
 };
 
