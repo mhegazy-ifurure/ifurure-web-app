@@ -24,14 +24,14 @@ export const Card: React.FC<{
   return (
     <>
      <div
-  className="relative items-center justify-center flex max-w-[28rem] flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md my-5">
-  <CMSLink url={href}>
-  <div className="relative m-0 overflow-hidden text-gray-700 flex-shrink bg-transparent rounded-none shadow-none bg-clip-border h-42">
-    <Media resource={media} className="h-48" />
+  className="relative items-center justify-center  flex w-full flex-col overflow-hidden rounded-xl  text-gray-700 shadow-md  my-5">
+  <CMSLink className="block w-full" url={href}>
+  <div className="relative  overflow-hidden text-gray-700  bg-transparent rounded-none bg-clip-border bg-white  ">
+    <Media resource={media} className="max-h-48 w-full" />
   </div>
   </CMSLink>
   <CMSLink url={href}>
-    <h4 className="block p-2 font-sans min-h-16 antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+    <h4 className=" block p-2  min-h-16 antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
     {titleToUse}
     </h4>
    

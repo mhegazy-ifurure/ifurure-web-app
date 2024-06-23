@@ -9,9 +9,7 @@ import { Card } from "../Card";
 import { Post, Project, Service } from "../../../utils/payload-types";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
-import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import CardSlider from "../../Slider";
 
 export type Props = {
   className?: string;
@@ -25,15 +23,6 @@ export type Props = {
 
 export const CollectionArchive: React.FC<Props> = (props) => {
   const { className, relationTo, limit } = props;
-  // // @ts-ignore
-  // let settings ={
-  //   className: "center",
-  //   centerMode: true,
-  //   infinite: true,
-  //   centerPadding: "60px",
-  //   slidesToShow: 3,
-  //   speed: 500
-  // }
 
   const { t } = useTranslation(relationTo);
 
@@ -41,35 +30,47 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     returnObjects: true,
   });
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: limit,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: limit,
+          slidesToScroll:1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+     
+    ]
+  };
   return (
     <div className={[className].filter(Boolean).join(" ")}>
-      
-
-      <div className={" relative"}>
-        <CardSlider cards={collections} relationTo={relationTo} slidesToShow={limit}/>
+      <div className={"relative overflow-hidden py-10 px-5 "}>
+        <Slider {...settings}>
+          {collections.map((collection, index) => {
+            return (
+              <div className="px-2">
+                <Card key={index} doc={collection} relationTo={relationTo} />
+              </div>
+            );
+          })}
+        </Slider>
       </div>
     </div>
   );
 };
-
-// function SampleNextArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "block"}}
-//       onClick={onClick}
-//     />
-//   );
-// }
-
-// function SamplePrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "block",color:"blue" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
