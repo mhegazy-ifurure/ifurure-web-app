@@ -47,7 +47,7 @@ const MediaContent: React.FC<
                     {enableLink && link && (
                       
                       <CMSLink
-                      className={styles.secondaryBtn}
+                      
                         {...link}
                       />
                     )}
