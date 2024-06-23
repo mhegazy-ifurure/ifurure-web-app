@@ -72,127 +72,129 @@ export interface Project {
             url?: string | null;
             label: string;
             icon?: string | Media | null;
-            appearance?: ('default' | 'primary' | 'secondary') | null;
+            appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
           };
           id?: string | null;
         }[]
       | null;
     media?: string | Media | null;
   };
-  layout: (
-    | {
-        richText: {
-          [k: string]: unknown;
-        }[];
-        links?:
-          | {
-              link: {
-                type?: ('reference' | 'custom') | null;
-                newTab?: boolean | null;
-                reference?:
-                  | ({
-                      relationTo: 'pages';
-                      value: string | Page;
-                    } | null)
-                  | ({
-                      relationTo: 'media';
-                      value: string | Media;
-                    } | null);
-                url?: string | null;
-                label: string;
-                icon?: string | Media | null;
-                appearance?: ('primary' | 'secondary') | null;
-              };
-              id?: string | null;
-            }[]
-          | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'cta';
-      }
-    | {
-        columns?:
-          | {
-              size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
-              richText: {
-                [k: string]: unknown;
-              }[];
-              enableLink?: boolean | null;
-              link?: {
-                type?: ('reference' | 'custom') | null;
-                newTab?: boolean | null;
-                reference?:
-                  | ({
-                      relationTo: 'pages';
-                      value: string | Page;
-                    } | null)
-                  | ({
-                      relationTo: 'media';
-                      value: string | Media;
-                    } | null);
-                url?: string | null;
-                label: string;
-                icon?: string | Media | null;
-                appearance?: ('default' | 'primary' | 'secondary') | null;
-              };
-              id?: string | null;
-            }[]
-          | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'content';
-      }
-    | {
-        position?: ('default' | 'fullscreen') | null;
-        media: string | Media;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'mediaBlock';
-      }
-    | {
-        introContent: {
-          [k: string]: unknown;
-        }[];
-        populateBy?: ('collection' | 'selection') | null;
-        relationTo?: ('posts' | 'projects' | 'services') | null;
-        limit?: number | null;
-        selectedDocs?:
-          | (
+  layout?:
+    | (
+        | {
+            richText: {
+              [k: string]: unknown;
+            }[];
+            links?:
               | {
-                  relationTo: 'posts';
-                  value: string | Post;
-                }
+                  link: {
+                    type?: ('reference' | 'custom') | null;
+                    newTab?: boolean | null;
+                    reference?:
+                      | ({
+                          relationTo: 'pages';
+                          value: string | Page;
+                        } | null)
+                      | ({
+                          relationTo: 'media';
+                          value: string | Media;
+                        } | null);
+                    url?: string | null;
+                    label: string;
+                    icon?: string | Media | null;
+                    appearance?: ('primary' | 'secondary') | null;
+                  };
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+        | {
+            columns?:
               | {
-                  relationTo: 'projects';
-                  value: string | Project;
-                }
-              | {
-                  relationTo: 'services';
-                  value: string | Service;
-                }
-            )[]
-          | null;
-        populatedDocs?:
-          | (
-              | {
-                  relationTo: 'posts';
-                  value: string | Post;
-                }
-              | {
-                  relationTo: 'projects';
-                  value: string | Project;
-                }
-              | {
-                  relationTo: 'services';
-                  value: string | Service;
-                }
-            )[]
-          | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'archive';
-      }
-  )[];
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full' | 'full-wrapped') | null;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  enableLink?: boolean | null;
+                  link?: {
+                    type?: ('reference' | 'custom') | null;
+                    newTab?: boolean | null;
+                    reference?:
+                      | ({
+                          relationTo: 'pages';
+                          value: string | Page;
+                        } | null)
+                      | ({
+                          relationTo: 'media';
+                          value: string | Media;
+                        } | null);
+                    url?: string | null;
+                    label: string;
+                    icon?: string | Media | null;
+                    appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
+                  };
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'content';
+          }
+        | {
+            position?: ('default' | 'fullscreen') | null;
+            media: string | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'mediaBlock';
+          }
+        | {
+            introContent: {
+              [k: string]: unknown;
+            }[];
+            populateBy?: ('collection' | 'selection') | null;
+            relationTo?: ('posts' | 'projects' | 'services') | null;
+            limit?: number | null;
+            selectedDocs?:
+              | (
+                  | {
+                      relationTo: 'posts';
+                      value: string | Post;
+                    }
+                  | {
+                      relationTo: 'projects';
+                      value: string | Project;
+                    }
+                  | {
+                      relationTo: 'services';
+                      value: string | Service;
+                    }
+                )[]
+              | null;
+            populatedDocs?:
+              | (
+                  | {
+                      relationTo: 'posts';
+                      value: string | Post;
+                    }
+                  | {
+                      relationTo: 'projects';
+                      value: string | Project;
+                    }
+                  | {
+                      relationTo: 'services';
+                      value: string | Service;
+                    }
+                )[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'archive';
+          }
+      )[]
+    | null;
   slug?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -251,7 +253,7 @@ export interface Page {
             url?: string | null;
             label: string;
             icon?: string | Media | null;
-            appearance?: ('default' | 'primary' | 'secondary') | null;
+            appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
           };
           id?: string | null;
         }[]
@@ -291,9 +293,27 @@ export interface Page {
             blockType: 'cta';
           }
         | {
+            enableIntroContent?: boolean | null;
+            introContent: {
+              [k: string]: unknown;
+            }[];
+            enableContactInfo?: boolean | null;
+            contactCards?:
+              | {
+                  type?: ('mail' | 'tel' | 'location') | null;
+                  icon: string | Media;
+                  contactInfo: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'formBlock';
+          }
+        | {
             columns?:
               | {
-                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full' | 'full-wrapped') | null;
                   richText: {
                     [k: string]: unknown;
                   }[];
@@ -313,7 +333,7 @@ export interface Page {
                     url?: string | null;
                     label: string;
                     icon?: string | Media | null;
-                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                    appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
                   };
                   id?: string | null;
                 }[]
@@ -395,7 +415,7 @@ export interface Page {
                     url?: string | null;
                     label: string;
                     icon?: string | Media | null;
-                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                    appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
                   };
                   id?: string | null;
                 }[]
@@ -450,7 +470,7 @@ export interface Post {
             url?: string | null;
             label: string;
             icon?: string | Media | null;
-            appearance?: ('default' | 'primary' | 'secondary') | null;
+            appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
           };
           id?: string | null;
         }[]
@@ -492,7 +512,7 @@ export interface Post {
         | {
             columns?:
               | {
-                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full' | 'full-wrapped') | null;
                   richText: {
                     [k: string]: unknown;
                   }[];
@@ -512,7 +532,7 @@ export interface Post {
                     url?: string | null;
                     label: string;
                     icon?: string | Media | null;
-                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                    appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
                   };
                   id?: string | null;
                 }[]
@@ -618,7 +638,7 @@ export interface Service {
             url?: string | null;
             label: string;
             icon?: string | Media | null;
-            appearance?: ('default' | 'primary' | 'secondary') | null;
+            appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
           };
           id?: string | null;
         }[]
@@ -660,7 +680,7 @@ export interface Service {
         | {
             columns?:
               | {
-                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+                  size?: ('oneThird' | 'half' | 'twoThirds' | 'full' | 'full-wrapped') | null;
                   richText: {
                     [k: string]: unknown;
                   }[];
@@ -680,7 +700,7 @@ export interface Service {
                     url?: string | null;
                     label: string;
                     icon?: string | Media | null;
-                    appearance?: ('default' | 'primary' | 'secondary') | null;
+                    appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
                   };
                   id?: string | null;
                 }[]
@@ -843,5 +863,4 @@ export interface Footer {
   updatedAt?: string | null;
   createdAt?: string | null;
 }
-
 

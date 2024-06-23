@@ -6,12 +6,14 @@ import MediaContent from "./MediaContent";
 import ArchiveBlock from "./ArchiveBlock";
 import { Page } from "../utils/payload-types";
 import { toKebabCase } from "../utils/toKebabCase";
+import FormBlock from "./FormBlock";
 
 const blockComponents = {
   content: ContentBlock,
   mediaBlock: MediaBlock,
   mediaContent: MediaContent,
   archive: ArchiveBlock,
+  formBlock:FormBlock,
 };
 
 const Blocks: React.FC<{
