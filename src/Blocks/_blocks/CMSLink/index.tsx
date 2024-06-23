@@ -62,6 +62,7 @@ import React from "react";
 import { Button, Props as ButtonProps } from "../Button";
 import { Page } from "../../../utils/payload-types";
 import { Link } from "react-router-dom";
+import { styles } from "../../../utils/style";
 
 type CMSLinkType = {
   type?: "custom" | "reference";
@@ -91,6 +92,22 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   invert,
   onClick,
 }) => {
+
+  switch (appearance) {
+    case "primary":
+      className += ` ${styles.primaryBtn}`;
+      break;
+    case "secondary":
+      className += ` ${styles.secondaryBtn}`;
+      break;
+    case "teritary":
+      className += ` ${styles.teritaryBtn}`;
+      break;
+
+    default:
+      className;
+      break;
+  }
   const href =
     type === "reference" &&
     typeof reference?.value === "object" &&
@@ -122,7 +139,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       className={className}
       newTab={newTab}
       href={href}
-      appearance={appearance}
       label={label}
       invert={invert}
       onClick={onClick}

@@ -10,6 +10,7 @@ import { Post, Project, Service } from "../../../utils/payload-types";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "react-awesome-slider/dist/styles.css";
+import { styles } from "../../../utils/style";
 
 export type Props = {
   className?: string;
@@ -35,7 +36,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     infinite: true,
     slidesToShow: limit,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2500,
     responsive: [
       {
@@ -60,12 +61,12 @@ export const CollectionArchive: React.FC<Props> = (props) => {
   };
   return (
     <div className={[className].filter(Boolean).join(" ")}>
-      <div className={"relative overflow-hidden py-10 px-5 "}>
+      <div className={"relative overflow-hidden py-10 "}>
         <Slider {...settings}>
           {collections.map((collection, index) => {
             return (
-              <div className="px-2">
-                <Card key={index} doc={collection} relationTo={relationTo} />
+              <div key={index} className={styles.paddingX}>
+                <Card  doc={collection} relationTo={relationTo} />
               </div>
             );
           })}

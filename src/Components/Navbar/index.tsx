@@ -45,7 +45,7 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className={`sm:px-16 px-6  w-full flex items-center py-2 md:py-4 fixed right-0 left-0 top-0 z-20   ${
+        className={`sm:px-16 px-6  w-full flex  items-center py-2 md:py-4 fixed right-0 left-0 top-0 z-20   ${
           textColor === "text-white" ? "" : "bg-white-100"
         }  `}
       >
@@ -73,7 +73,7 @@ export const Navbar = () => {
                   return (
                     <li
                       key={i}
-                      className={`  text-[18px] font-medium cursor-pointer capitalize ${textColor} `}
+                      className={`  text-[16px] font-medium cursor-pointer capitalize ${textColor} `}
                     >
                       <CMSLink className="text-nowrap" {...link} />
                     </li>

@@ -4,7 +4,6 @@ import React from "react";
 import { Page as PageType } from "../../utils/payload-types";
 import RichText from "../../Blocks/_blocks/RichText";
 import { CMSLink } from "../../Blocks/_blocks/CMSLink";
-import { styles } from "../../utils/style";
 
 const HighImpactHero: React.FC<PageType["hero"]> = ({
   richText,
@@ -30,11 +29,7 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
             {links?.map(({ link }, i) => {
               return (
                 // @ts-ignore
-                <CMSLink
-                  key={i}
-                  {...link}
-                  className={i % 2 == 0 ? styles.teritaryBtn : styles.primaryBtn}
-                />
+                <CMSLink key={i} {...link} />
               );
             })}
           </div>
