@@ -27,7 +27,7 @@ export const Card: React.FC<{
   className="relative items-center justify-center  flex w-full flex-col overflow-hidden rounded-xl  text-gray-700 shadow-md  my-5">
   <CMSLink className="block w-full" url={href}>
   <div className="relative  overflow-hidden text-gray-700  bg-transparent rounded-none bg-clip-border bg-white  ">
-    <Media resource={media} className="max-h-48 w-full" />
+    <Media resource={media} className="max-h-56 w-full" />
   </div>
   </CMSLink>
   <CMSLink url={href}>

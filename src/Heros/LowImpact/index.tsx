@@ -20,7 +20,7 @@ const LowImpactHero: React.FC<PageType["hero"]> = ({
 
         <div className="flex gap-4 mt-10 items-center">
           {links?.map((link, i) => (
-            <CMSLink {...link} key={i} className={styles.mainBtn} />
+            <CMSLink {...link} key={i} className={styles.teritaryBtn} />
           ))}
         </div>
       </div>
