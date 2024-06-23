@@ -24,12 +24,10 @@ function App() {
           new QueryClient({
             defaultOptions: {
               queries: {
-                retryOnMount:false,
                 refetchOnWindowFocus: true,
                 staleTime: 10000,
                 cacheTime: 60000,
                 retry: 5,
-                // maxConcurrentQueries: 20,
               },
             },
           })
