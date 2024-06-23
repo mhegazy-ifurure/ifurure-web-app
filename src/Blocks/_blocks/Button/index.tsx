@@ -23,7 +23,6 @@ export const Button: React.FC<Props> = ({
   className,
   label,
   newTab,
-  appearance,
   href,
   onClick,
   type = "button",
