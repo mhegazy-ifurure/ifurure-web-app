@@ -36,7 +36,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     infinite: true,
     slidesToShow: limit,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2500,
     responsive: [
       {
@@ -53,7 +53,8 @@ export const CollectionArchive: React.FC<Props> = (props) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2
+          initialSlide: 2,
+          dots:true
         }
       },
      
@@ -63,7 +64,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
     <div className={[className].filter(Boolean).join(" ")}>
       <div className={"relative overflow-hidden py-10 "}>
         <Slider {...settings}>
-          {collections.map((collection, index) => {
+          {collections.length>0&&collections.map((collection, index) => {
             return (
               <div key={index} className={styles.paddingX}>
                 <Card  doc={collection} relationTo={relationTo} />
