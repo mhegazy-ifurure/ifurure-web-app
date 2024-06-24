@@ -31,32 +31,22 @@ const Footer = () => {
 
           <div className="flex justify-between gap-4 flex-wrap">
             <div className={"flex gap-3 flex-wrap justify-center "}>
-            {navItems &&
+            <ul className="list-none hidden lg:flex flexrow gap-10 items-center ">
+              {navItems &&
                 navItems.map(({ link }, i) => {
                   return (
                     <li
                       key={i}
-                      className={`  text-[16px] font-medium cursor-pointer capitalize  `}
+                      className={`  text-[16px] font-medium cursor-pointer capitalize `}
                     >
                       <CMSLink className="text-nowrap" {...link} />
                     </li>
                   );
                 })}
-            </div>
 
-            {/* <div className="flex flex-col gap-4 my-3">
-              <h6 className="md:text-[16px] text-[14px]">{t("SubscribeToOurNewsLetter")}</h6>
-              <div className="">
-                <input
-                  type="text"
-                  className="border border-gray-300 rounded-md w-2/3 px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400 focus:border-blue-400"
-                />
-                <button className="md:mx-2 mx-1 md:text-[16px] text-[14px] border-teritary border px-3 py-2 rounded-md hover:ring  transform ease-in-out duration-300 transition hover:scale-110">
-                  {t("Subscribe")}
-                </button>
-              </div>
-              <p className="md:text-[16px] text-[14px]">{t("BySubscribingYouAgreeToWithOurPrivacyPolicy")}</p>
-            </div> */}
+             
+            </ul>
+            </div>
           </div>
         </div>
 
