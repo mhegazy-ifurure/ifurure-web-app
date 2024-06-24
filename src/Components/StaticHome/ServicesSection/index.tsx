@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-refresh/only-export-components */
 import { useTranslation } from "react-i18next";
-import ServiceCard from "../../Blocks/ServiceCard";
-import SectionWrapper from "../../hoc/SectionWrapper";
-import {  ServiceItem, WhyUsSection } from "../../utils/ifuture.types";
-import { service1, service2 } from "../../assets";
-import { styles } from "../../utils/style";
+import ServiceCard from "../ServiceCard";
+import SectionWrapper from "../../../hoc/SectionWrapper";
+import {  ServiceItem, WhyUsSection } from "../../../utils/ifuture.types";
+import { service1, service2 } from "../../../assets";
+import { styles } from "../../../utils/style";
 import i18next from "i18next";
 
 const WhyUs: React.FC<{ whyUs: WhyUsSection }> = ({ whyUs }) => {

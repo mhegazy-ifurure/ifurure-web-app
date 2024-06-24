@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useTranslation } from "react-i18next";
-import SectionWrapper from "../../hoc/SectionWrapper";
-import { NavItems } from "../../utils/ifuture.types";
-import { styles } from "../../utils/style";
+import SectionWrapper from "../../../hoc/SectionWrapper";
+import { NavItems } from "../../../utils/ifuture.types";
+import { styles } from "../../../utils/style";
 import i18next from "i18next";
 
 const IndustriesSection = () => {

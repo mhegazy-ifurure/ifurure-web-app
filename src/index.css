@@ -835,6 +835,22 @@ video {
   width: 100%;
 }
 
+.w-\[40px\]{
+  width: 40px;
+}
+
+.w-\[64px\]{
+  width: 64px;
+}
+
+.w-\[64Dpx\]{
+  width: 64Dpx;
+}
+
+.w-\[15px\]{
+  width: 15px;
+}
+
 .min-w-\[140px\]{
   min-width: 140px;
 }

@@ -1,10 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import { ContentSection, ContentSectionProps, } from "../../utils/ifuture.types";
+import { ContentSection, ContentSectionProps, } from "../../../utils/ifuture.types";
 import { useTranslation } from "react-i18next";
-import SectionWrapper from "../../hoc/SectionWrapper";
-import { styles } from "../../utils/style";
+import SectionWrapper from "../../../hoc/SectionWrapper";
+import { styles } from "../../../utils/style";
 import i18next from "i18next";
-import { aboutImg } from "../../assets";
+import { aboutImg } from "../../../assets";
 
 
 const StaticMediaContentBlock: React.FC<ContentSectionProps> = ({ content }) => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { ServiceItem } from "../../utils/ifuture.types";
+import { ServiceItem } from "../../../utils/ifuture.types";
 // import { styles } from "../../utils/style";
 
 const ServiceCard:React.FC<{service:ServiceItem ,img:string ,id:string}> = ({service ,img ,id}) => {

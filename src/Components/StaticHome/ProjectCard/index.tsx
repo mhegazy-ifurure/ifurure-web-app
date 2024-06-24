@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectItem } from "../../utils/ifuture.types";
+import { ProjectItem } from "../../../utils/ifuture.types";
 // import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 // import i18next from "i18next";
 

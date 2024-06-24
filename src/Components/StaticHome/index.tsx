@@ -4,10 +4,10 @@ import { ContentSection, Hero, HomeHeroProps } from "../../utils/ifuture.types";
 import React from "react";
 import { styles } from "../../utils/style";
 import Contact from "../Contact";
-import IndusteriesSection from "../IndusteriesSection";
-import Projects from "../Projects";
-import ServicesSection from "../ServicesSection";
-import AboutSection from "../AboutUs";
+import IndusteriesSection from "./IndusteriesSection";
+import Projects from "./Projects";
+import ServicesSection from "./ServicesSection";
+import AboutSection from "./AboutUs";
 
 
 const HomeHero: React.FC<HomeHeroProps> = ({ hero }) => {

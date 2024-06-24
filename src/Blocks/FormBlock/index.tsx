@@ -34,7 +34,7 @@ const FormBlock: React.FC<
                     key={i}
                     className="flex flex-col gap-2 py-3 px-5  rounded-lg   justify-center  cursor-pointer "
                   >
-                    <Media resource={item.icon} className="w-[90px]" />
+                    <Media resource={item.icon} className="w-[15px]" />
 
                     <h6 className="text-[20px] capitalize font-bold">{item.type}</h6>
                     <a
