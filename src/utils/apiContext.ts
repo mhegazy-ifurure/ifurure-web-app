@@ -5,12 +5,20 @@ import { useQuery } from "react-query";
 
 export const useApi = () => {
   const { isLoading: headerLoading } = useHeader();
+  const { isLoading: footerLoading } = useFooter();
   const { isLoading: projectsLoading } = useProjects();
   const { isLoading: postsLoading } = usePosts();
   const { isLoading: servicesLoading } = useServices();
   const { isLoading: pageLoading } = usePages();
 
-  return { headerLoading ,projectsLoading,postsLoading, servicesLoading,pageLoading};
+  return {
+    headerLoading,
+    projectsLoading,
+    postsLoading,
+    servicesLoading,
+    pageLoading,
+    footerLoading,
+  };
 };
 
 const useHeader = () => {
@@ -40,6 +48,35 @@ const useHeader = () => {
   i18next.addResource("ar", "header", "data", ar?.data.navItems);
 
   // console.log(i18next.t("data"));
+
+  return { isLoading, isError };
+};
+
+const useFooter = () => {
+  const {
+    data: en,
+    isError,
+    isLoading,
+  } = useQuery(`footer-en`, () => {
+    return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/footer`, {
+      params: {
+        locale: "en",
+        depth: 5,
+      },
+    });
+  });
+
+  const { data: ar } = useQuery(`footer-ar`, () => {
+    return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/footer`, {
+      params: {
+        locale: "ar",
+        depth: 5,
+      },
+    });
+  });
+
+  i18next.addResource("en", "footer", "data", en?.data);
+  i18next.addResource("ar", "footer", "data", ar?.data);
 
   return { isLoading, isError };
 };

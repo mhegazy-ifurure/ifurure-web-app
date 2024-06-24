@@ -839,7 +839,6 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  slogan: string;
   copyright: string;
   navItems?:
     | {
@@ -850,11 +849,8 @@ export interface Footer {
             | ({
                 relationTo: 'pages';
                 value: string | Page;
-              } | null)
-            | ({
-                relationTo: 'media';
-                value: string | Media;
-              } | null);
+              } )
+            
           url?: string | null;
           label: string;
           icon?: string | Media | null;

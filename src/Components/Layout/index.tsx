@@ -17,6 +17,7 @@ import {
 const Layout = () => {
   const {
     headerLoading,
+    footerLoading,
     projectsLoading,
     postsLoading,
     servicesLoading,
@@ -33,7 +34,7 @@ const Layout = () => {
   const projects: Project[] = tProjects("data", { returnObjects: true });
 
   if (
-    headerLoading ||
+    headerLoading ||footerLoading||
     projectsLoading ||
     postsLoading ||
     servicesLoading ||

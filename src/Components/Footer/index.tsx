@@ -1,17 +1,24 @@
+
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line no-unused-vars
+
+
 import { useTranslation } from "react-i18next";
 import { logodark } from "../../assets";
-import { NavItems } from "../../utils/ifuture.types";
+import { CMSLink } from "../../Blocks/_blocks/CMSLink";
+import { Footer as FooterType} from "../../utils/payload-types";
 
 const Footer = () => {
   // console.log(footer)
 
   const { t } = useTranslation("footer");
-  const navItems: NavItems = t("navItems", { returnObjects: true });
-  const copyrights = t("copyrights");
+  const { copyright, navItems }: FooterType = t("data", { returnObjects: true });
 
   return (
     <footer className={" sm:px-16 px-6 mx-auto  pt-5  bg-primary text-white"}>
-      <div >
+      <div>
         <div className={"flex flex-col   gap-5 lg:gap-10"}>
           <a href="#">
             <img
@@ -24,17 +31,17 @@ const Footer = () => {
 
           <div className="flex justify-between gap-4 flex-wrap">
             <div className={"flex gap-3 flex-wrap justify-center "}>
-              {navItems.map((item, i) => {
-                return (
-                  <a
-                    className="rounded-full md:text-[16px] text-[14px]  text-nowrap transform ease-in-out duration-300 transition hover:scale-110 "
-                    key={i}
-                    href={item.path}
-                  >
-                    {item.label}
-                  </a>
-                );
-              })}
+            {navItems &&
+                navItems.map(({ link }, i) => {
+                  return (
+                    <li
+                      key={i}
+                      className={`  text-[16px] font-medium cursor-pointer capitalize  `}
+                    >
+                      <CMSLink className="text-nowrap" {...link} />
+                    </li>
+                  );
+                })}
             </div>
 
             {/* <div className="flex flex-col gap-4 my-3">
@@ -71,7 +78,7 @@ const Footer = () => {
           </div>
           <div className="flex-grow">
             <p className="my-1 md:text-end text-center  text-[14px] font-light">
-              {copyrights}
+              {copyright}
             </p>
           </div>
         </div>

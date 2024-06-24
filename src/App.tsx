@@ -26,7 +26,7 @@ function App() {
               queries: {
                 refetchOnWindowFocus: true,
                 staleTime: 10000,
-                cacheTime: 60000,
+                cacheTime: 600000,
                 retry: 5,
               },
             },

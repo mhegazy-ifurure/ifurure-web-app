@@ -65,7 +65,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../../../utils/style";
 
 type CMSLinkType = {
-  type?: "custom" | "reference";
+  type?: ('reference' | 'custom') | null;
   url?: string|null;
   newTab?: boolean|null;
   reference?: {
