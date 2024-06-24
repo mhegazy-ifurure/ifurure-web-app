@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { logodark } from "../../assets";
 import { CMSLink } from "../../Blocks/_blocks/CMSLink";
 import { Footer as FooterType} from "../../utils/payload-types";
+import { styles } from "../../utils/style";
 
 const Footer = () => {
   // console.log(footer)
@@ -17,7 +18,7 @@ const Footer = () => {
   const { copyright, navItems }: FooterType = t("data", { returnObjects: true });
 
   return (
-    <footer className={" sm:px-16 px-6 mx-auto  pt-5  bg-primary text-white"}>
+    <footer className={styles.padding+ " mx-auto  pt-5  bg-primary text-white"}>
       <div>
         <div className={"flex flex-col   gap-5 lg:gap-10"}>
           <a href="#">
