@@ -4,8 +4,6 @@ import { styles } from "../../utils/style";
 import { Page } from "../../utils/payload-types";
 import RichText from "../_blocks/RichText";
 import ContactUsForm from "./ContactForm";
-import { useTranslation } from "react-i18next";
-import { ContactForm } from "../../utils/ifuture.types";
 import { Media } from "../_blocks/Media";
 // @ts-ignore
 
@@ -28,22 +26,22 @@ const FormBlock: React.FC<
           <div>
             <ContactUsForm />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-10 order-first md:order-last ">
             {contactCards.length > 0 &&
               contactCards.map((item, i) => (
                 <>
                   <div
                     key={i}
-                    className="flex flex-col gap-2 py-3 px-5 bg-yellow-600  rounded-lg   justify-center  cursor-pointer "
+                    className="flex flex-col gap-2 py-3 px-5  rounded-lg   justify-center  cursor-pointer "
                   >
                     <Media resource={item.icon} className="w-[90px]" />
 
                     <h6 className="text-[20px] capitalize font-bold">{item.type}</h6>
                     <a
                       href={
-                        item.info === "+966596544376"
-                          ? `tel:${item?.info}`
-                          : `mailto:${item?.info}`
+                        item.type === "phone"
+                          ? `tel:${item?.contactInfo}`
+                          :item.type === "mail"? `mailto:${item?.contactInfo}`:``
                       }
                       className="underline"
                     >
