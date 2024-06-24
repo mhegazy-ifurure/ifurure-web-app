@@ -15,7 +15,6 @@ const FormBlock: React.FC<
   }
 > = (props) => {
   const { enableIntroContent, introContent, contactCards } = props;
-  console.log({ contactCards });
 
   return (
     <>
@@ -34,9 +33,10 @@ const FormBlock: React.FC<
                     key={i}
                     className="flex flex-col gap-2 py-3 px-5  rounded-lg   justify-center  cursor-pointer "
                   >
-                    <Media resource={item.icon} className="w-[15px]" />
+                    <Media resource={item.icon} className="w-[20px]" />
 
-                    <h6 className="text-[20px] capitalize font-bold">{item.type}</h6>
+                    <h6 className=" text-[20px] capitalize leading-[140%] ">{item.title}</h6>
+                    <p className="text-[16px] md:text-[18px]  ">{item.subtext}</p>
                     <a
                       href={
                         item.type === "phone"

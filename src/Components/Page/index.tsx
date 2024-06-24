@@ -2,6 +2,7 @@ import { Hero } from "../../Heros";
 import Blocks from "../../Blocks";
 
 const Page = ({ page }) => {
+  
   const { hero, layout } = page;
 
   return (

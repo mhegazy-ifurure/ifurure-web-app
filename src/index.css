@@ -851,6 +851,10 @@ video {
   width: 15px;
 }
 
+.w-\[20px\]{
+  width: 20px;
+}
+
 .min-w-\[140px\]{
   min-width: 140px;
 }
@@ -1434,6 +1438,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[px\]{
+  color: px;
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -1856,6 +1864,10 @@ video {
 
   .md\:text-\[40px\]{
     font-size: 40px;
+  }
+
+  .md\:text-\[\]{
+    color: ;
   }
 }
 
