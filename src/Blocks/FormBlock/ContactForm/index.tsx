@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
 
-import React from "react";
 import { ContactForm, ContactFormValues } from "../../../utils/ifuture.types";
 import { sendEmail } from "../../../utils/sendEmail";
 import { styles } from "../../../utils/style";
