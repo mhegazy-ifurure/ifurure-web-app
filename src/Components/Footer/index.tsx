@@ -18,7 +18,7 @@ const Footer = () => {
   const { copyright, navItems }: FooterType = t("data", { returnObjects: true });
 
   return (
-    <footer className={styles.padding+ " mx-auto  pt-5  bg-primary text-white"}>
+    <footer className={styles.padding+ " mx-auto  bg-primary text-white"}>
       <div>
         <div className={"flex flex-col   gap-5 lg:gap-10"}>
           <a href="#">
@@ -30,15 +30,15 @@ const Footer = () => {
             />
           </a>
 
-          <div className="flex justify-between gap-4 flex-wrap">
-            <div className={"flex gap-3 flex-wrap justify-center "}>
-            <ul className="list-none hidden lg:flex flexrow gap-10 items-center ">
+          <div className="flex justify-between gap-4 flex-wrap my-4">
+            <div className={"flex gap-3 flex-wrap justify-center items-center "}>
+            <ul className="list-none flex flex-row gap-4 md:gap-10 items-center  flex-wrap ">
               {navItems &&
                 navItems.map(({ link }, i) => {
                   return (
                     <li
                       key={i}
-                      className={`  text-[16px] font-medium cursor-pointer capitalize `}
+                      className={`  text-[14px] font-medium cursor-pointer capitalize `}
                     >
                       <CMSLink className="text-nowrap" {...link} />
                     </li>
@@ -68,7 +68,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex-grow">
-            <p className="my-1  text-end  text-[12px] font-light">
+            <p className="my-1  md:text-end  text-center text-[12px] font-light">
               {copyright}
             </p>
           </div>
