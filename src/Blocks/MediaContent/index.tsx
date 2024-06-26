@@ -13,7 +13,6 @@ const MediaContent: React.FC<
   }
 > = (props) => {
   const { media, content , apperance} = props;
-  console.log(apperance);
   
   let caption;
   if (media && typeof media === "object") caption = media.caption;
@@ -46,13 +45,15 @@ const MediaContent: React.FC<
                     }
                   >
                     <RichText content={richText} />
-                    {enableLink && link && (
+                   <div className="mt-4">
+                   {enableLink && link && (
                       
                       <CMSLink
                       
                         {...link}
                       />
                     )}
+                   </div>
                   </div>
                 </>
               );

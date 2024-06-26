@@ -41,7 +41,15 @@ const ContentBlock: React.FC<
                   >
                     <RichText content={richText} />
 
-                    {enableLink && link && <CMSLink {...link} />}
+                    <div className="mt-4">
+                   {enableLink && link && (
+                      
+                      <CMSLink
+                      
+                        {...link}
+                      />
+                    )}
+                   </div>
                   </div>
                 </>
               );

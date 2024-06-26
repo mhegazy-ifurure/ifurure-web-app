@@ -618,12 +618,12 @@ video {
   z-index: 20;
 }
 
-.order-first{
-  order: -9999;
-}
-
 .order-last{
   order: 9999;
+}
+
+.col-span-1{
+  grid-column: span 1 / span 1;
 }
 
 .col-span-12{
@@ -640,10 +640,6 @@ video {
 
 .col-span-8{
   grid-column: span 8 / span 8;
-}
-
-.col-span-1{
-  grid-column: span 1 / span 1;
 }
 
 .\!-m-px{
@@ -732,6 +728,10 @@ video {
 
 .mt-5{
   margin-top: 1.25rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .block{
@@ -1662,10 +1662,6 @@ video {
 @media (min-width: 768px){
   .md\:order-first{
     order: -9999;
-  }
-
-  .md\:order-last{
-    order: 9999;
   }
 
   .md\:col-span-12{
