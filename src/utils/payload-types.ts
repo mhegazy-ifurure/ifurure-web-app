@@ -852,10 +852,7 @@ export interface Footer {
                 relationTo: 'pages';
                 value: string | Page;
               } | null)
-            | ({
-                relationTo: 'media';
-                value: string | Media;
-              } | null);
+           
           url?: string | null;
           label: string;
           icon?: string | Media | null;
