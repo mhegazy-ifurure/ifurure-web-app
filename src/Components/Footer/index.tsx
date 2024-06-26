@@ -53,22 +53,22 @@ const Footer = () => {
 
         <div
           className={
-            "flex items-center justify-between border-t border-white  md:mt-10 py-2 flex-wrap  "
+            "flex items-center pt-4 gap-2 justify-between border-t border-white  md:mt-10 py-2 flex-wrap  "
           }
         >
-          <div className=" flex md:gap-4 justify-center gap-2 items-center flex-wrap ">
-            <a className="underline text-[14px] font-light " href="/">
+          <div className=" flex md:gap-4 mx-auto gap-3 items-center flex-wrap ">
+            <a className="underline text-[12px] font-light " href="/">
               {t("PrivacyPolicy")}
             </a>
-            <a className="underline text-[14px] font-light " href="/">
+            <a className="underline text-[12px] font-light " href="/">
               {t("TermsOfService")}
             </a>
-            <a className="underline text-[14px] font-light " href="/">
+            <a className="underline text-[12px] font-light " href="/">
               {t("CookiesSettings")}
             </a>
           </div>
           <div className="flex-grow">
-            <p className="my-1 md:text-end text-center  text-[14px] font-light">
+            <p className="my-1  text-end  text-[12px] font-light">
               {copyright}
             </p>
           </div>
