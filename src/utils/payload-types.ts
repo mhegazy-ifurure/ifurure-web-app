@@ -395,6 +395,7 @@ export interface Page {
             blockType: 'archive';
           }
         | {
+            apperance?: ('horizontal' | 'vertical') | null;
             content?:
               | {
                   size?: ('oneThird' | 'twoThirds' | 'full') | null;
@@ -826,6 +827,7 @@ export interface Header {
           url?: string | null;
           label: string;
           icon?: string | Media | null;
+          appearance?: ('default' | 'primary' | 'secondary' | 'teritary') | null;
         };
         id?: string | null;
       }[]
@@ -849,8 +851,11 @@ export interface Footer {
             | ({
                 relationTo: 'pages';
                 value: string | Page;
-              } )
-            
+              } | null)
+            | ({
+                relationTo: 'media';
+                value: string | Media;
+              } | null);
           url?: string | null;
           label: string;
           icon?: string | Media | null;
@@ -861,4 +866,5 @@ export interface Footer {
   updatedAt?: string | null;
   createdAt?: string | null;
 }
+
 

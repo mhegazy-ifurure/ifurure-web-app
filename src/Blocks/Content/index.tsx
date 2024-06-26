@@ -29,19 +29,19 @@ const ContentBlock: React.FC<
                     key={index}
                     className={`  ${
                       size == "half"
-                        ? "   md:col-span-6"
+                        ? " col-span-1  md:col-span-6"
                         : size == "oneThird"
-                        ? "   md:col-span-4"
+                        ? " col-span-1   md:col-span-4"
                         : size == "twoThirds"
-                        ? "   md:col-span-8"
+                        ? " col-span-1   md:col-span-8"
                         : size == "full-wrapped"
-                        ? "md:col-span-12  md:w-3/4 mx-auto  "
-                        : " md:col-span-12  "
+                        ? "col-span-1      md:col-span-12  md:w-3/4 mx-auto  "
+                        : "col-span-1  md:col-span-12  "
                     }`}
                   >
                     <RichText content={richText} />
-                    
-                    {enableLink && link && <CMSLink  {...link} />}
+
+                    {enableLink && link && <CMSLink {...link} />}
                   </div>
                 </>
               );

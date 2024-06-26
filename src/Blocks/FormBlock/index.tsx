@@ -25,7 +25,7 @@ const FormBlock: React.FC<
           <div>
             <ContactUsForm />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-10 order-first md:order-last ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-10 ">
             {contactCards.length > 0 &&
               contactCards.map((item, i) => (
                 <>
