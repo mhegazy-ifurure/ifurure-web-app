@@ -63,7 +63,7 @@ const MediaContent: React.FC<
 
       <div className="">
         <div className=" flex items-center justify-center">
-          <Media resource={media} />
+          <Media className="w-full" resource={media} />
         </div>
 
         {caption && (
