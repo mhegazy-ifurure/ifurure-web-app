@@ -23,7 +23,7 @@ const MediaContent: React.FC<
         styles.contentMargin + ` grid grid-cols-1 ${apperance=='horizontal'&&'md:grid-cols-2'} lg:my-10 my-5 gap-6 `+styles.padding
       }
     >
-      <div className={" order-last md:order-first"}>
+      <div className={" order-last"}>
         <div className="grid grid-cols-12 ">
           {content &&
             content.length > 0 &&
