@@ -14,8 +14,6 @@ const CardsContentBlock: React.FC<
   }
 > = (props) => {
   const { columns } = props;
-  console.log({columns});
-  
 
   return (
     <>
@@ -25,8 +23,7 @@ const CardsContentBlock: React.FC<
             columns.length > 0 &&
             columns.map((col, index) => {
               const { enableLink, richText, media, link, size } = col;
-{console.log({richText})
-}
+
               return (
                 <>
                   <div

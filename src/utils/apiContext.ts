@@ -190,7 +190,6 @@ const usePages = () => {
       },
     });
   });
-  console.log(ar);
   
 
   i18next.addResource("en", "pages", "data", en?.data.docs);

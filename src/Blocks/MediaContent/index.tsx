@@ -28,7 +28,7 @@ const MediaContent: React.FC<
       }
     >
       <div className={" order-last md:order-first"}>
-        <div className="grid grid-cols-12 md:gap-x-24 gap-y-8 ">
+        <div className="grid grid-cols-3 md:gap-x-24 gap-y-8 ">
           {content &&
             content.length > 0 &&
             content.map((item, index) => {
@@ -39,15 +39,11 @@ const MediaContent: React.FC<
                   <div
                     key={index}
                     className={
-                      size == "half"
-                        ? "col-span-12  md:col-span-6"
-                        : size == "oneThird"
-                        ? " col-span-12  md:col-span-4"
+                      size == "oneThird"
+                        ? " col-span-3  md:col-span-1"
                         : size == "twoThirds"
-                        ? "col-span-12   md:col-span-8"
-                        : size == "full-wrapped"
-                        ? "     col-span-12  md:w-3/4 mx-auto  "
-                        : " col-span-12  "
+                        ? "col-span-3   md:col-span-2"
+                        : " col-span-3  "
                     }
                   >
                     <RichText content={richText} />
