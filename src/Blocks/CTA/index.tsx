@@ -12,12 +12,12 @@ export const CallToActionBlock: React.FC<
   Props & {
     id?: string;
   }
-> = ({ links, richText }) => {
+> = ({ links, richText ,backgroundColor }) => {
     
   return (
   
-      <div className={styles.padding}>
-        <div className={'grid grid-cols-1 md:grid-cols-2'}>
+      <div className={styles.padding} style={{backgroundColor:`#${backgroundColor}`}}>
+        <div className={'grid grid-cols-1 text-center'}>
           <div >
             <RichText className={richText} content={richText} />
           </div>
