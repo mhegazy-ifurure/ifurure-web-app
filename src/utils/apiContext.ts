@@ -30,7 +30,7 @@ const useHeader = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/header`, {
       params: {
         locale: "en",
-        depth: 5,
+        depth: 25,
       },
     });
   });
@@ -39,7 +39,7 @@ const useHeader = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/header`, {
       params: {
         locale: "ar",
-        depth: 5,
+        depth: 25,
       },
     });
   });
@@ -61,7 +61,7 @@ const useFooter = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/footer`, {
       params: {
         locale: "en",
-        depth: 5,
+        depth: 25,
       },
     });
   });
@@ -70,7 +70,7 @@ const useFooter = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/globals/footer`, {
       params: {
         locale: "ar",
-        depth: 5,
+        depth: 25,
       },
     });
   });
@@ -177,7 +177,7 @@ const usePages = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/pages`, {
       params: {
         locale: "en",
-        depth: 5,
+        depth: 10,
       },
     });
   });
@@ -186,10 +186,12 @@ const usePages = () => {
     return axios.get(`${import.meta.env.REACT_APP_API_URL}/pages`, {
       params: {
         locale: "ar",
-        depth: 5,
+        depth: 10,
       },
     });
   });
+  console.log(ar);
+  
 
   i18next.addResource("en", "pages", "data", en?.data.docs);
   i18next.addResource("ar", "pages", "data", ar?.data.docs);

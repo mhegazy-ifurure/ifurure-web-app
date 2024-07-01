@@ -25,6 +25,7 @@ const Layout = () => {
   } = useApi();
   const { t: tPages } = useTranslation("pages");
   const pages: PageType[] = tPages("data", { returnObjects: true });
+console.log({pages});
 
   const { t: tService } = useTranslation("services");
   const services: Service[] = tService("data", { returnObjects: true });

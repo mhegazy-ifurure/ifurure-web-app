@@ -7,13 +7,17 @@ import ArchiveBlock from "./ArchiveBlock";
 import { Page } from "../utils/payload-types";
 import { toKebabCase } from "../utils/toKebabCase";
 import FormBlock from "./FormBlock";
+import { CallToActionBlock } from "./CTA";
+import CardsContentBlock from "./CardsContent";
 
 const blockComponents = {
   content: ContentBlock,
   mediaBlock: MediaBlock,
   mediaContent: MediaContent,
   archive: ArchiveBlock,
-  formBlock:FormBlock,
+  formBlock: FormBlock,
+  cta: CallToActionBlock,
+  cardsContent: CardsContentBlock,
 };
 
 const Blocks: React.FC<{
@@ -21,6 +25,7 @@ const Blocks: React.FC<{
   blocks: Page["layout"][0][];
 }> = (props) => {
   const { blocks } = props;
+  console.log({ blocks });
 
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
 
