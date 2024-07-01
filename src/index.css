@@ -630,6 +630,10 @@ video {
   grid-column: span 3 / span 3;
 }
 
+.col-span-6{
+  grid-column: span 6 / span 6;
+}
+
 .\!-m-px{
   margin: -1px !important;
 }
@@ -899,6 +903,10 @@ video {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .flex-row{

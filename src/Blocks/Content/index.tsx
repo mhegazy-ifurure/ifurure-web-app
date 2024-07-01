@@ -17,7 +17,7 @@ const ContentBlock: React.FC<
   return (
     <>
       <div className={styles.padding}>
-        <div className=" grid grid-cols-12 md:gap-x-24 gap-y-8 ">
+        <div className=" grid grid-cols-6 md:gap-x-24 gap-y-8 ">
           {columns &&
             columns.length > 0 &&
             columns.map((col, index) => {
@@ -29,14 +29,14 @@ const ContentBlock: React.FC<
                     key={index}
                     className={`  ${
                       size == "half"
-                        ? "col-span-12  md:col-span-6"
+                        ? "col-span-6  md:col-span-3"
                         : size == "oneThird"
-                        ? " col-span-12  md:col-span-4"
+                        ? " col-span-6  md:col-span-2"
                         : size == "twoThirds"
-                        ? "col-span-12   md:col-span-8"
+                        ? "col-span-6  md:col-span-4"
                         : size == "full-wrapped"
-                        ? "     col-span-12  md:w-3/4 mx-auto  "
-                        : " col-span-12  "
+                        ? "     col-span-6  md:w-3/4 mx-auto  "
+                        : " col-span-6  "
                     }`}
                   >
                     <RichText content={richText} />
