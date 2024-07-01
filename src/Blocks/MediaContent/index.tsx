@@ -12,19 +12,23 @@ const MediaContent: React.FC<
     id?: string;
   }
 > = (props) => {
-  const { media, content , apperance} = props;
-  
+  const { media, content, apperance } = props;
+
   let caption;
   if (media && typeof media === "object") caption = media.caption;
 
   return (
     <div
       className={
-        styles.contentMargin + ` grid grid-cols-1 ${apperance=='horizontal'&&'md:grid-cols-2'} lg:my-10 my-5 gap-6 `+styles.padding
+        styles.contentMargin +
+        ` grid grid-cols-1 ${
+          apperance == "horizontal" && "md:grid-cols-2"
+        } lg:my-10 my-5 gap-6 md:gap-14 ` +
+        styles.padding
       }
     >
-      <div className={" order-last"}>
-        <div className="grid grid-cols-12 ">
+      <div className={" order-last md:order-first"}>
+        <div className="grid grid-cols-12 md:gap-x-24 gap-y-8 ">
           {content &&
             content.length > 0 &&
             content.map((item, index) => {
@@ -36,24 +40,20 @@ const MediaContent: React.FC<
                     key={index}
                     className={
                       size == "half"
-                        ? "col-span-6"
+                        ? "col-span-12  md:col-span-6"
                         : size == "oneThird"
-                        ? "col-span-4"
+                        ? " col-span-12  md:col-span-4"
                         : size == "twoThirds"
-                        ? "col-span-8"
-                        : "col-span-12"
+                        ? "col-span-12   md:col-span-8"
+                        : size == "full-wrapped"
+                        ? "     col-span-12  md:w-3/4 mx-auto  "
+                        : " col-span-12  "
                     }
                   >
                     <RichText content={richText} />
-                   <div className="mt-4">
-                   {enableLink && link && (
-                      
-                      <CMSLink
-                      
-                        {...link}
-                      />
-                    )}
-                   </div>
+                    <div className="mt-4">
+                      {enableLink && link && <CMSLink {...link} />}
+                    </div>
                   </div>
                 </>
               );
