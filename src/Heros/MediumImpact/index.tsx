@@ -8,13 +8,13 @@ import { Media } from "../../Blocks/_blocks/Media";
 const MediumImpactHero: React.FC<PageType["hero"]> = ({
   richText,
   media,
-  links,
+  links,backgroundColor
 }) => {
   return (
     <div
       className={
-        "grid grid-cols-1 md:grid-cols-2 lg:my-10 mt-10 " + styles.padding
-      }
+        "grid grid-cols-1 md:grid-cols-2 lg:my-10 mt-10 " + styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
+      }style={{backgroundColor:`#${backgroundColor}`}}
     >
       <div className={"flex flex-col relative py-5 md:pe-20 gap-5  "}>
         <RichText content={richText} />

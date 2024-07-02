@@ -13,11 +13,11 @@ const CardsContentBlock: React.FC<
     id?: string;
   }
 > = (props) => {
-  const { columns } = props;
+  const { columns ,backgroundColor } = props;
 
   return (
     <>
-      <div className={styles.padding}>
+      <div className={styles.padding+` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`} style={{backgroundColor:`#${backgroundColor}`}}>
         <div className=" grid grid-cols-12 md:gap-x-24 gap-y-8 ">
           {columns &&
             columns.length > 0 &&

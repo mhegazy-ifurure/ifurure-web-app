@@ -10,13 +10,13 @@ type Props = Extract<Page["layout"][0], { blockType: "mediaBlock" }> & {
   id?: string;
 };
 const MediaBlock: React.FC<Props> = (props) => {
-  const { media, position = "default" } = props;
+  const { media, position = "default",backgroundColor } = props;
   let caption;
   if (media && typeof media === "object") caption = media.caption;
 
   return (
     <>
-      <div className="relative">
+      <div className={styles.padding+` relative ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`} style={{backgroundColor:`#${backgroundColor}`}} >
         {position === "fullscreen" && (
           <div >
             <Media resource={media} />

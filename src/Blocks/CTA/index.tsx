@@ -16,7 +16,7 @@ export const CallToActionBlock: React.FC<
     
   return (
   
-      <div className={styles.padding} style={{backgroundColor:`#${backgroundColor}`}}>
+      <div className={styles.padding+` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`} style={{backgroundColor:`#${backgroundColor}`}}>
         <div className={'grid grid-cols-1 text-center'}>
           <div >
             <RichText className={richText} content={richText} />

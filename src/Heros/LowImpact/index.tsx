@@ -6,14 +6,14 @@ import { styles } from '../../utils/style';
 
 const LowImpactHero: React.FC<PageType["hero"]> = ({
   richText,
-  links,
+  links,backgroundColor
   
 }) => {
   return <>
   <div
         className={
-          "flex flex-col relative py-5 md:pe-20 gap-5 mt-10 "+styles.padding
-        }
+          "flex flex-col relative py-5 md:pe-20 gap-5 mt-10 "+styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
+        } style={{backgroundColor:`#${backgroundColor}`}}
       >
        
         <RichText content={richText} />

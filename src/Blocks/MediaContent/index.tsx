@@ -12,20 +12,21 @@ const MediaContent: React.FC<
     id?: string;
   }
 > = (props) => {
-  const { media, content, apperance } = props;
+  const { media, content, apperance ,backgroundColor} = props;
 
   let caption;
   if (media && typeof media === "object") caption = media.caption;
 
   return (
     <div
+     
       className={
         styles.contentMargin +
         ` grid grid-cols-1 ${
           apperance == "horizontal" && "md:grid-cols-2"
         } lg:my-10 my-5 gap-6 md:gap-14 ` +
-        styles.padding
-      }
+        styles.padding + ` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
+      } style={{backgroundColor:`#${backgroundColor}`}}
     >
       <div className={" order-last md:order-first"}>
         <div className="grid grid-cols-3 md:gap-x-24 gap-y-8 ">

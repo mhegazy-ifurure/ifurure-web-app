@@ -10,14 +10,14 @@ const ArchiveBlock: React.FC<
     id?: string;
   }
 > = (props) => {
-  const { introContent, id, relationTo, populateBy, limit } = props;
+  const { introContent, id, relationTo, populateBy, limit ,backgroundColor } = props;
 
 
  
   return (
-    <div id={`block-${id}`} className={"relative"}>
+    <div id={`block-${id}`} className={styles.padding+` relative ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`}  style={{backgroundColor:`#${backgroundColor}`}}>
       {introContent && (
-        <div className={styles.padding}>
+        <div >
           <RichText content={introContent} />
         </div>
       )}
