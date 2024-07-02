@@ -113,11 +113,15 @@ export interface FormField {
 }
 
 export interface ContactForm {
-  name: FormField;
-  email: FormField;
-  message: FormField;
-  checkItem: string;
-  submit: string;
+  [x: string]: any |null |undefined;
+  businessField?: any |null |undefined;
+  phone?: any |null |undefined;
+  companyName?: any |null |undefined;
+  name?: FormField |null |undefined;
+  email?: FormField |null |undefined;
+  message?: FormField |null |undefined;
+  checkItem?: string|null |undefined;
+  submit?: string|null |undefined;
 }
 export interface ContactData {
   SectionTitle: string;

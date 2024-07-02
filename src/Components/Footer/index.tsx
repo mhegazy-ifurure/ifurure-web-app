@@ -40,6 +40,7 @@ const Footer = () => {
                       key={i}
                       className={`  text-[14px] font-medium cursor-pointer capitalize `}
                     >
+                      {/* @ts-ignore */}
                       <CMSLink className="text-nowrap" {...link} />
                     </li>
                   );

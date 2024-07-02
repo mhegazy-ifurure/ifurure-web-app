@@ -6,31 +6,34 @@
       "label": "Name",
       "placeholder": "name"
     },
+    "companyName": {
+      "label": "Company Name",
+      "placeholder": "Company Name"
+    },
     "email": {
       "label": "Email",
       "placeholder": "email"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Phone"
+    },
+    "businessField": {
+      "label": "what is your business category",
+      "placeholder": "what is your business category"
+    },
+    "service": {
+      "label": "Select Service"
     },
     "message": {
       "label": "Message",
       "placeholder": "message"
     },
+    "details": {
+      "label": "more information about ypue business",
+      "placeholder": "tell us your needs"
+    },
     "checkItem": "I accept the Terms",
     "submit": "Submit"
-  },
-  "contectCard": [
-    {
-      "label": "email",
-      "text": "Send us direct email",
-      "info": "info@ifuture.sa"
-    },
-    {
-      "label": "Phone",
-      "text": "Give us a phone call",
-      "info": "+966596544376"
-    },
-    {
-      "label": "Office",
-      "text": "Riyadh - Saudi Arabia"
-    }
-  ]
+  }
 }
