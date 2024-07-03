@@ -52,7 +52,6 @@ const RequestServiceForm = () => {
       .required("accepting terms is required"),
   });
 
-  console.log([...services.map((service) => service.title)]);
 
   return (
     <>
