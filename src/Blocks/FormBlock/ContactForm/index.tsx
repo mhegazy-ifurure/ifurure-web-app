@@ -2,13 +2,13 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
 
-import { ContactForm, ContactFormValues } from "../../../utils/ifuture.types";
+import { ContactForm } from "../../../utils/ifuture.types";
 import { sendEmail } from "../../../utils/sendEmail";
 import { styles } from "../../../utils/style";
 import { useTranslation } from "react-i18next";
 
 const ContactUsForm = () => {
-  const initialValues: ContactFormValues = {
+  const initialValues = {
     name: "",
     email: "",
     message: "",
