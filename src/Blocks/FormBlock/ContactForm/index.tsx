@@ -39,14 +39,14 @@ const ContactUsForm = () => {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              {form.name.label}
+              {form.name?.label}
             </label>
             <Field
               type="text"
               className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-100 sm:text-sm"
               id="name"
               name="name"
-              placeholder={form.name.placeholder}
+              placeholder={form.name?.placeholder}
             />
             <ErrorMessage
               className="text-red-500"
@@ -59,14 +59,14 @@ const ContactUsForm = () => {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              {form.email.label}
+              {form.email?.label}
             </label>
             <Field
               type="email"
               name="email"
               className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-100 sm:text-sm"
               id="email"
-              placeholder={form.email.placeholder}
+              placeholder={form.email?.placeholder}
             />
             <ErrorMessage
               className="text-red-500"
@@ -80,7 +80,7 @@ const ContactUsForm = () => {
               htmlFor="message"
               className="block text-sm font-medium text-gray-700"
             >
-              {form.message.label}
+              {form.message?.label}
             </label>
             <Field
               as="textarea"
@@ -88,7 +88,7 @@ const ContactUsForm = () => {
               rows={4}
               id="message"
               name="message"
-              placeholder={form.message.label}
+              placeholder={form.message?.label}
             />
             <ErrorMessage
               className="text-red-500"
