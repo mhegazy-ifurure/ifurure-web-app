@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
@@ -30,7 +31,8 @@ const ContactUsForm = () => {
         })}
         onSubmit={(values, { resetForm }) => {
           resetForm();
-          sendEmail(values);
+          // @ts-ignore
+          sendEmail(values,{formtype:'contact us'});
         }}
       >
         <Form className="grid grid-cols-1 bg-white  gap-4 mt-5 md:p-10 rounded-2xl ">

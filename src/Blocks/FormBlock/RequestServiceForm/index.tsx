@@ -20,6 +20,9 @@ const RequestServiceForm = () => {
     message: "",
     terms: false,
   };
+  const { t: tService } = useTranslation("services");
+
+  const services: Service[] = tService("data", { returnObjects: true });
   const { t } = useTranslation("contact");
   const form: ContactForm = t("form", { returnObjects: true });
 
@@ -39,14 +42,14 @@ const RequestServiceForm = () => {
       })
       .required("Please enter a valid Egypt phone number"),
     businessField: Yup.string().required("your business category is required"),
-    service: Yup.string().required("Service is required"),
-    details: Yup.string().required("Message is required"),
+    service: Yup.string().oneOf([...services.map((service)=>service.title)]).required("Service is required"),
+    message: Yup.string().required("Message is required"),
     terms: Yup.boolean().isTrue("accepting terms is required").required("accepting terms is required"),
   });
 
-  const { t: tService } = useTranslation("services");
-
-  const services: Service[] = tService("data", { returnObjects: true });
+  console.log([...services.map((service)=>service.title)]);
+  
+  
 
   return (
     <>
@@ -54,10 +57,10 @@ const RequestServiceForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log({ values });
+          console.log({ values })
 
           resetForm();
-          sendEmail(values);
+          sendEmail(values ,{formtype:'request service'});
         }}
       >
         <Form className="grid grid-cols-1  bg-white gap-4 mt-5 md:p-10 rounded-2xl ">
@@ -197,7 +200,7 @@ const RequestServiceForm = () => {
           </div>
           <div className="   mb-4">
             <label
-              htmlFor="details"
+              htmlFor="message"
               className="block text-sm font-medium text-gray-700"
             >
               {form.details.label}
@@ -206,29 +209,29 @@ const RequestServiceForm = () => {
               as="textarea"
               className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-100 sm:text-sm"
               rows={4}
-              id="details"
-              name="details"
+              id="message"
+              name="message"
               placeholder={form.details.label}
             />
             <ErrorMessage
               className="text-red-500"
-              name="details"
+              name="message"
               component={"div"}
             />
           </div>
           <div className=" mb-4 flex items-center">
             <Field
               type="checkbox"
-              id="termsCheckbox"
-              name="termsCheckbox"
+              id="terms"
+              name="terms"
               className="form-checkbox h-5 w-5 text-blue-600"
             />
-            <label htmlFor="termsCheckbox" className="mx-2 text-gray-700">
+            <label htmlFor="terms" className="mx-2 text-gray-700">
               {form.checkItem}
             </label>
             <ErrorMessage
               className="text-red-500"
-              name="termsCheckbox"
+              name="terms"
               component={"div"}
             />
           </div>
