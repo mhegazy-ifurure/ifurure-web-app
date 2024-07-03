@@ -18,6 +18,7 @@ const FormBlock: React.FC<
   }
 > = (props) => {
   const {
+    backgroundColor,
     enableIntroContent,
     introContent,
     contactCards,
@@ -30,7 +31,7 @@ const FormBlock: React.FC<
 
   return (
     <>
-      <div className={styles.padding}>
+      <div className={styles.padding+` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`} style={{backgroundColor:`#${backgroundColor}`}}>
         {enableIntroContent && <RichText content={introContent} />}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
