@@ -42,14 +42,17 @@ const RequestServiceForm = () => {
       })
       .required("Please enter a valid Egypt phone number"),
     businessField: Yup.string().required("your business category is required"),
-    service: Yup.string().oneOf([...services.map((service)=>service.title)]).required("Service is required"),
+    service: Yup.string()
+      .oneOf([...services.map((service) => service.title)])
+      .default(services[0].title)
+      .required("Service is required"),
     message: Yup.string().required("Message is required"),
-    terms: Yup.boolean().isTrue("accepting terms is required").required("accepting terms is required"),
+    terms: Yup.boolean()
+      .isTrue("accepting terms is required")
+      .required("accepting terms is required"),
   });
 
-  console.log([...services.map((service)=>service.title)]);
-  
-  
+  console.log([...services.map((service) => service.title)]);
 
   return (
     <>
@@ -57,10 +60,10 @@ const RequestServiceForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log({ values })
+          console.log({ values });
 
           resetForm();
-          sendEmail(values ,{formtype:'request service'});
+          sendEmail(values, { formtype: "request service" });
         }}
       >
         <Form className="grid grid-cols-1  bg-white gap-4 mt-5 md:p-10 rounded-2xl ">
