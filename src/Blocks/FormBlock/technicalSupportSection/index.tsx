@@ -36,9 +36,9 @@ const TechnicalSupport: React.FC<{
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-white rounded-2xl overflow-hidden ">
         {typeof media == "object" && <Media resource={media} />}
-        <RichText content={richText} />
+        <RichText content={richText} className="p-3" />
         {/* @ts-ignore */}
         {enableLink && <CMSLink {...link} />}
       </div>

@@ -14,7 +14,7 @@ const ContactCard: React.FC<{
 }> = ({ item }) => {
   return (
     <>
-      <div className="flex flex-col gap-2 py-3 px-5  rounded-lg   justify-center  cursor-pointer ">
+      <div className="flex flex-col gap-2 py-3 px-5  rounded-2xl bg-white text-black  justify-center  cursor-pointer ">
         <Media resource={item.icon} className="w-[20px]" />
 
         <h6 className=" text-[20px] capitalize leading-[140%] ">

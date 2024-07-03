@@ -26,14 +26,14 @@ const ContactUsForm = () => {
             .email("Invalid email address")
             .required("Email is required"),
           message: Yup.string().required("Message is required"),
-          terms: Yup.boolean().required("accepting terms is required"),
+          terms: Yup.boolean().isTrue("accepting terms is required").required("accepting terms is required"),
         })}
         onSubmit={(values, { resetForm }) => {
           resetForm();
           sendEmail(values);
         }}
       >
-        <Form className="grid grid-cols-1  gap-4 mt-5 md:p-10 rounded-2xl ">
+        <Form className="grid grid-cols-1 bg-white  gap-4 mt-5 md:p-10 rounded-2xl ">
           <div className=" mb-4 ">
             <label
               htmlFor="name"
@@ -100,7 +100,7 @@ const ContactUsForm = () => {
             <Field
               type="checkbox"
               id="termsCheckbox"
-              name="terms"
+              name="termsCheckbox"
               className="form-checkbox h-5 w-5 text-blue-600"
             />
             <label htmlFor="termsCheckbox" className="mx-2 text-gray-700">

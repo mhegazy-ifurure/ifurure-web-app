@@ -41,7 +41,7 @@ const RequestServiceForm = () => {
     businessField: Yup.string().required("your business category is required"),
     service: Yup.string().required("Service is required"),
     details: Yup.string().required("Message is required"),
-    terms: Yup.boolean().required("accepting terms is required"),
+    terms: Yup.boolean().isTrue("accepting terms is required").required("accepting terms is required"),
   });
 
   const { t: tService } = useTranslation("services");
@@ -60,7 +60,7 @@ const RequestServiceForm = () => {
           sendEmail(values);
         }}
       >
-        <Form className="grid grid-cols-1  gap-4 mt-5 md:p-10 rounded-2xl ">
+        <Form className="grid grid-cols-1  bg-white gap-4 mt-5 md:p-10 rounded-2xl ">
           <div className=" mb-4 ">
             <label
               htmlFor="name"
