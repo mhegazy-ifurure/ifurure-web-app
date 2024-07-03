@@ -63,7 +63,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
   return (
     <div className={[className].filter(Boolean).join(" ")}>
       <div className={"relative overflow-hidden py-10 "}>
-        <div>
+        <Slider {...settings}>
           {collections.length>0&&collections.map((collection, index) => {
             return (
               <div key={index} className={styles.paddingX}>
@@ -71,7 +71,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
               </div>
             );
           })}
-        </div>
+        </Slider>
       </div>
     </div>
   );
