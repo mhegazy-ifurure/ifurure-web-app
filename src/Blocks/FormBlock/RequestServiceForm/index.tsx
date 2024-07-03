@@ -31,7 +31,7 @@ const RequestServiceForm = () => {
       .required("Email is required"),
     phone: Yup.string()
       .test("is-valid-egypt-phone", "Invalid Egypt phone number", (value) => {
-        const phoneRegExp = /^(?:\+?20|0)[1-9]\d{8}$/; // Regular expression for Egyptian phone numbers
+        const phoneRegExp = /^01[0125][0-9]{8}$/gm; // Regular expression for Egyptian phone numbers
 
         // Return true if the phone number matches the expected format
         // @ts-ignore
@@ -53,6 +53,8 @@ const RequestServiceForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
+          console.log(values);
+          
           resetForm();
           sendEmail(values);
         }}
