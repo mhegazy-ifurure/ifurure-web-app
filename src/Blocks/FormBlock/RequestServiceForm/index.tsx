@@ -38,13 +38,14 @@ const RequestServiceForm = () => {
         return phoneRegExp.test(value);
       })
       .required("Please enter a valid Egypt phone number"),
-    //   businessField:Yup,
-    message: Yup.string().required("Message is required"),
+    businessField: Yup.string().required("your business category is required"),
+    service: Yup.string().required("Service is required"),
+    details: Yup.string().required("Message is required"),
     terms: Yup.boolean().required("accepting terms is required"),
   });
 
   const { t: tService } = useTranslation("services");
-  
+
   const services: Service[] = tService("data", { returnObjects: true });
 
   return (
@@ -53,8 +54,8 @@ const RequestServiceForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          
+          console.log({ values });
+
           resetForm();
           sendEmail(values);
         }}
@@ -177,8 +178,9 @@ const RequestServiceForm = () => {
               className="mt-1 block w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-100 sm:text-sm"
               id="service"
             >
-              {services && services.length>0&&
-            //   @ts-ignore
+              {services &&
+                services.length > 0 &&
+                //   @ts-ignore
                 services.map((service, i) => {
                   return (
                     <option key={i} value={service.title}>
@@ -218,7 +220,7 @@ const RequestServiceForm = () => {
             <Field
               type="checkbox"
               id="termsCheckbox"
-              name="terms"
+              name="termsCheckbox"
               className="form-checkbox h-5 w-5 text-blue-600"
             />
             <label htmlFor="termsCheckbox" className="mx-2 text-gray-700">
@@ -226,7 +228,7 @@ const RequestServiceForm = () => {
             </label>
             <ErrorMessage
               className="text-red-500"
-              name="terms"
+              name="termsCheckbox"
               component={"div"}
             />
           </div>

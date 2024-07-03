@@ -24,7 +24,7 @@ function App() {
           new QueryClient({
             defaultOptions: {
               queries: {
-                refetchOnWindowFocus: true,
+                refetchOnWindowFocus: false,
                 staleTime: 10000,
                 cacheTime: 600000,
                 retry: 5,
