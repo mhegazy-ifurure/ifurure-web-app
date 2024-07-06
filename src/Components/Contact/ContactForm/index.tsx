@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
