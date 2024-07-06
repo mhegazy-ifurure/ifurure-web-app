@@ -24,7 +24,8 @@ const ContactUsForm: React.FC<{ form: ContactForm }> = ({ form }) => {
         })}
         onSubmit={(values, { resetForm }) => {
           resetForm();
-          sendEmail(values)
+          // @ts-ignore
+          sendEmail(values,{formtype:'contact us'});
           
         }}
       >
