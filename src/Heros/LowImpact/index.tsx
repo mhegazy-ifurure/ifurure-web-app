@@ -10,10 +10,13 @@ const LowImpactHero: React.FC<PageType["hero"]> = ({
   
 }) => {
   return <>
+
+
+  <section className={styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
+        } style={{backgroundColor:`#${backgroundColor}`}}>
   <div
         className={
-          "flex flex-col relative py-5 md:pe-20 gap-5 mt-10 "+styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
-        } style={{backgroundColor:`#${backgroundColor}`}}
+          "flex flex-col relative  md:pe-20 gap-5 pt-20 " }
       >
        
         <RichText content={richText} />
@@ -24,6 +27,8 @@ const LowImpactHero: React.FC<PageType["hero"]> = ({
           ))}
         </div>
       </div>
+  </section>
+ 
   
   
   </>
