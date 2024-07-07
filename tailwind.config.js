@@ -15,6 +15,10 @@ export default {
       "2xl": "1536px",
     },
     extend: {
+      transform: {
+        '0': 'translate(0)',
+        '-20': 'translateY(-20px)',
+      },
       backgroundImage: { "hero-background": "url('/src/assets/homePage.jpg')" },
       colors: {
         primary: "#000937",

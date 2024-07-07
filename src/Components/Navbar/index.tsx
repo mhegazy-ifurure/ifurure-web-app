@@ -14,56 +14,44 @@ import { CMSLink } from "../../Blocks/_blocks/CMSLink/index.js";
 import { Header } from "../../utils/payload-types.js";
 
 export const Navbar = () => {
-  const [textColor, setTextColor] = useState("text-white");
-
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight) {
-        setTextColor("text-primary");
-      } else {
-        setTextColor("text-white");
-      }
+      const currentScrollPos = window.scrollY;
+
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 50);
+      setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prevScrollPos]);
 
-  const [, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  // const{isLoading} = useHeader()
   const { t } = useTranslation("header");
   // @ts-ignore
-  const navItems: Header['navItems'][0] = t("data", { returnObjects: true });
-  // console.log(i18next.getResource("ar", "header", "data"));
-
-  // console.log({ navItems });
+  const navItems: Header["navItems"][0] = t("data", { returnObjects: true });
 
   return (
     <>
       <nav
-        className={`sm:px-16 px-6  w-full flex  items-center py-2 md:py-4 fixed right-0 left-0 top-0 z-20   ${
-          textColor === "text-white" ? "" : "bg-white-100"
-        }  `}
+        className={`${visible ? 'translate-y-0' : '-translate-y-20'}  transition-transform duration-500  sm:px-16 px-6  w-full flex  items-center py-2 md:py-4 fixed right-0 left-0  z-20 bg-white-100 text-primary
+         `}
       >
         <div className="w-full flex justify-between items-center max-w-8xl mx-auto">
           <a
             className=""
             href="/"
             onClick={() => {
-              setActive("./home");
+            
               window.scroll({ top: 0 });
             }}
           >
-            <img
-              src={textColor === "text-white" ? logodark : logo3}
-              className="w-[150px] "
-              loading="lazy"
-              alt="logo"
-            />
+            <img src={logo3} className="w-[150px] " loading="lazy" alt="logo" />
           </a>
 
           <div className="flex gap-4 items-center">
@@ -73,24 +61,15 @@ export const Navbar = () => {
                   return (
                     <li
                       key={i}
-                      className={`  text-[16px] font-medium cursor-pointer capitalize ${textColor} `}
+                      className={`  text-[16px] font-medium cursor-pointer capitalize`}
                     >
                       <CMSLink className="text-nowrap" {...link} />
                     </li>
                   );
                 })}
 
-              {/* {navItems.map(({ link }, i) => {
-        return (
-          <CMSLink
-            key={i}
-            {...link}
-            className={textColor + " font-bold no-underline text-nowrap"}
-          />
-        );
-      })} */}
               <li>
-                <LanguageToggle textColor={textColor} />
+                <LanguageToggle />
               </li>
             </ul>
           </div>
@@ -98,12 +77,12 @@ export const Navbar = () => {
           <div className="lg:hidden flex flex-1 justify-end items-center ">
             {!toggle ? (
               <Bars3Icon
-                className={textColor + " w-[32px]"}
+                className={" w-[32px]"}
                 onClick={() => setToggle(!toggle)}
               />
             ) : (
               <XMarkIcon
-                className={textColor + " w-[32px]"}
+                className={" w-[32px]"}
                 onClick={() => setToggle(!toggle)}
               />
             )}
@@ -140,7 +119,7 @@ export const Navbar = () => {
                   );
                 })}
                 <li>
-                  <LanguageToggle textColor={"text-primary"} />
+                  <LanguageToggle />
                 </li>
               </ul>
             </div>
