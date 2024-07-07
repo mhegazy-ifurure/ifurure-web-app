@@ -4,7 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 
 import { useEffect, useState } from "react";
-import { logo3, logodark } from "../../assets/index.js";
+import { logo3 } from "../../assets/index.js";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./LanguageToggle/index.js";
 import { Bars3Icon } from "@heroicons/react/24/outline";
