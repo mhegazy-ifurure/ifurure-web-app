@@ -10,7 +10,6 @@ const HighImpactHero: React.FC<PageType["hero"]> = ({
   media,
   links,
 }) => {
-  console.log(media);
   
   return (
     <>
