@@ -11,10 +11,12 @@ const MediumImpactHero: React.FC<PageType["hero"]> = ({
   links,backgroundColor
 }) => {
   return (
-    <div
+   <section className={ styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`} style={{backgroundColor:`#${backgroundColor}`}}>
+
+<div
       className={
-        "grid grid-cols-1 md:grid-cols-2 lg:my-10 mt-10 " + styles.padding +` ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`
-      }style={{backgroundColor:`#${backgroundColor}`}}
+        "grid grid-cols-1 md:grid-cols-2 lg:my-10 mt-10 " 
+      }
     >
       <div className={"flex flex-col relative py-5 md:pe-20 gap-5  "}>
         <RichText content={richText} />
@@ -29,6 +31,8 @@ const MediumImpactHero: React.FC<PageType["hero"]> = ({
         {media && typeof media == "object" && <Media resource={media} />}
       </div>
     </div>
+
+   </section>
   );
 };
 
