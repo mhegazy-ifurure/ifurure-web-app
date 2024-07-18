@@ -15,6 +15,7 @@ export default {
       "2xl": "1536px",
     },
     extend: {
+      
       transform: {
         '0': 'translate(0)',
         '-20': 'translateY(-20px)',

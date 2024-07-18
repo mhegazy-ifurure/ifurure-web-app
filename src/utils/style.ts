@@ -11,6 +11,7 @@ interface Styles {
   afterElement: string;
   teritaryBtn: string;
   primaryBtn: string;
+  defaultBtn: string;
 
   secondaryBtn: string;
 }
@@ -34,8 +35,11 @@ const styles: Styles = {
   secondaryBtn:
     "md:my-5 my-2 inline-block border-secondray border md:text-[16px] text-[14px] px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
 
-    teritaryBtn:
-    " md:my-5 my-2 inline-block border-white border text-white md:text-[16px] text-[14px] px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
+  teritaryBtn:
+    " md:my-5 my-2  inline-block border-white border text-white md:text-[16px] text-[14px] px-5 py-3 rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer transform ease-in-out duration-300 transition hover:scale-110",
+
+  defaultBtn:
+    "  inline-block   md:text-[16px] text-[14px]  rounded-[10px] capitalize font-medium  no-underline  text-nowrap  cursor-pointer ",
 };
 
 export { styles };

@@ -60,18 +60,20 @@
 import React from "react";
 
 import { Button, Props as ButtonProps } from "../Button";
-import { Page } from "../../../utils/payload-types";
+import { Media as MediaType, Page } from "../../../utils/payload-types";
 import { Link } from "react-router-dom";
 import { styles } from "../../../utils/style";
+import { Media } from "../Media";
 
 type CMSLinkType = {
-  type?: ('reference' | 'custom') | null;
-  url?: string|null;
-  newTab?: boolean|null;
+  type?: ("reference" | "custom") | null;
+  url?: string | null;
+  newTab?: boolean | null;
   reference?: {
     value: string | Page;
     relationTo: "pages";
-  }|null;
+  } | null;
+  icon?: MediaType;
   label?: string;
   appearance?: ButtonProps["appearance"];
   children?: React.ReactNode;
@@ -82,6 +84,7 @@ type CMSLinkType = {
 
 export const CMSLink: React.FC<CMSLinkType> = ({
   type,
+  icon,
   url,
   newTab,
   reference,
@@ -92,7 +95,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   invert,
   onClick,
 }) => {
-
   switch (appearance) {
     case "primary":
       className += ` ${styles.primaryBtn}`;
@@ -105,7 +107,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       break;
 
     default:
-      className;
+      className +=`${styles.defaultBtn}`;
       break;
   }
   const href =
@@ -123,15 +125,18 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     const newTabProps = newTab
       ? { target: "_blank", rel: "noopener noreferrer" }
       : {};
-
-    if (href || url) {
-      return (
-        <Link {...newTabProps} to={href}  className={className}>
-          {label && label}
-          {children && children}
-        </Link>
-      );
+    if (typeof icon == "object") {
+      <Link {...newTabProps} to={href} className={className}>
+        <Media resource={icon} />
+      </Link>;
     }
+
+    return (
+      <Link {...newTabProps} to={href} className={className}>
+        {label && label}
+        {children && children}
+      </Link>
+    );
   }
 
   return (
@@ -141,6 +146,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       href={href}
       label={label}
       invert={invert}
+      icon={icon}
       onClick={onClick}
     />
   );

@@ -1,0 +1,38 @@
+.parentList:has(h1)::marker {
+  font-size: 40px; /* Example font size */
+}
+
+.parentList:has(h2)::marker {
+  font-size: 36px; /* Example font size */
+}
+.parentList:has(h3)::marker {
+  font-size: 32px; /* Example font size */
+}
+.parentList:has(h4)::marker {
+  font-size: 28px; /* Example font size */
+}
+.parentList:has(h5)::marker {
+  font-size: 24px; /* Example font size */
+}
+.parentList:has(h6)::marker {
+  font-size: 20px; /* Example font size */
+}
+@media screen and (max-width:768px) {
+    .parentList:has(h1)::marker {
+        font-size: 32px; /* Example font size */
+      }
+      
+      .parentList:has(h2)::marker {
+        font-size: 28px; /* Example font size */
+      }
+      .parentList:has(h3)::marker {
+        font-size: 26px; /* Example font size */
+      }
+      .parentList:has(h4)::marker {
+        font-size: 24px; /* Example font size */
+      }
+      .parentList:has(h5)::marker {
+        font-size: 22px; /* Example font size */
+      }
+     
+}

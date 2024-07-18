@@ -4,6 +4,8 @@ import React, { ElementType } from "react";
 
 // import classes from './index.module.scss'
 import { Link } from "react-router-dom";
+import { Media as MediaType } from "../../../utils/payload-types";
+import { Media } from "../Media";
 
 export type Props = {
   label?: string;
@@ -11,6 +13,7 @@ export type Props = {
   el?: "button" | "link" | "a";
   onClick?: () => void;
   href?: string;
+  icon?:MediaType
   newTab?: boolean | null;
   className?: string;
   type?: "submit" | "button";
@@ -22,6 +25,7 @@ export const Button: React.FC<Props> = ({
   el: elFromProps = "link",
   className,
   label,
+  icon,
   newTab,
   href,
   onClick,
@@ -38,7 +42,7 @@ export const Button: React.FC<Props> = ({
 
   const content = (
     <div className={className}>
-      <span>{label}</span>
+      {typeof icon =='object'?<Media  resource={icon}/>:<span>{label}</span>}
     </div>
   );
 
