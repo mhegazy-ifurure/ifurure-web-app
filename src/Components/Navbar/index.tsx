@@ -99,7 +99,7 @@ console.log({navItems});
 
             <div
               className={`${
-                !toggle ? "hidden" : "flex"
+                !(toggle&&visible) ? "hidden" : "flex"
               } p-3 bg-white absolute top-10 ${
                 i18next.dir() == "rtl" ? "left-0" : "right-0"
               } mx-4 my-2 min-w-[140px] z-10  justify-center rounded`}

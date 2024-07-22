@@ -1,74 +1,59 @@
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, LanguageIcon } from '@heroicons/react/20/solid'
-import  i18next, { changeLanguage } from 'i18next'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { useEffect, useMemo, useState } from "react";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import i18next from "i18next";
 
 export default function LanguageToggle() {
+  const [currLang, setCurrLang] = useState(i18next.language);
+  const displayLang = useMemo(() => {
+    return currLang === "en" ? "English (EN)" : "العربية (AR)";
+  }, [currLang]);
 
+  useEffect(() => {
+    document.dir = currLang === "en" ? "ltr" : "rtl";
+  }, [currLang]);
 
-
-
+  const toggleLanguage = () => {
+    const newLang = currLang === "en" ? "ar" : "en";
+    i18next.changeLanguage(newLang); // Change the language in i18next
+    setCurrLang(newLang); // Update the local state
+  };
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center items-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300">
-          <LanguageIcon className={'h-5 w-5 ' } />
-          <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
-        </Menu.Button>
-      </div>
+    <div className="   w-52 text-center">
+      <Menu>
+        <MenuButton className="inline-flex items-center text-nowrap gap-2 rounded-md py-1.5 px-3 text-sm/6  text-primary   focus:outline-none data-[hover]:bg-gray-200  data-[focus]:outline-1 data-[focus]:outline-white">
+          {displayLang}
+          <ChevronDownIcon className="size-4 fill-primary/60" />
+        </MenuButton>
 
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className={`absolute ${i18next.dir() =='rtl'?"left-0":"right-0"}  z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}>
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <div
-                onClick={()=>{changeLanguage('en')
-                document.dir = 'ltr'
-
-                }}
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                 English
-                </div>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <div
-                onClick={()=>{changeLanguage('ar')
-                document.dir = 'rtl'
-                
-                }}
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  عربي
-                </div>
-              )}
-            </Menu.Item>
-            
-          </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  )
+        <MenuItems
+          transition
+          anchor={"bottom"}
+          className="w-32  md:mt-4  origin-bottom-right rounded-b-xl border border-white/5 bg-white-100  text-sm/6 text-primary transition duration-100 ease-out  focus:outline-none data-[closed]:scale-90  data-[closed]:opacity-0"
+        >
+          {currLang != "en" ? (
+            <MenuItem>
+              <button
+                onClick={toggleLanguage}
+                tabIndex={10}
+                className={`group flex w-full items-center justify-center gap-2 rounded-b-lg py-1.5 px-3   hover:bg-gray-200`}
+              >
+                English(EN)
+              </button>
+            </MenuItem>
+          ) : (
+            <MenuItem>
+              <button
+                onClick={toggleLanguage}
+                className={`group flex w-full items-center justify-center gap-2 rounded-b-lg py-1.5 px-3  hover:bg-gray-200`}
+              >
+                العربيه (AR)
+              </button>
+            </MenuItem>
+          )}
+        </MenuItems>
+      </Menu>
+    </div>
+  );
 }
