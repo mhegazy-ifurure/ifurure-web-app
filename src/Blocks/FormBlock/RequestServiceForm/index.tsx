@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
@@ -8,6 +9,8 @@ import { sendEmail } from "../../../utils/sendEmail";
 import { styles } from "../../../utils/style";
 import { useTranslation } from "react-i18next";
 import { Service } from "../../../utils/payload-types";
+import { useCollection } from "../../../utils/apiContext";
+import Loading from "../../../Components/Loading";
 
 const RequestServiceForm = () => {
   const initialValues = {
@@ -22,8 +25,21 @@ const RequestServiceForm = () => {
   };
   const { t: tService } = useTranslation("services");
 
-  const services: Service[] = tService("data", { returnObjects: true });
   const { t } = useTranslation("contact");
+
+  const res = useCollection("services");
+  if (res.en.isLoading || res.ar.isLoading) {
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
+  let services: Service[] = [];
+
+
+  services = tService("data", { returnObjects: true });
+
   const form: ContactForm = t("form", { returnObjects: true });
 
   const validationSchema = Yup.object({
@@ -51,7 +67,6 @@ const RequestServiceForm = () => {
       .isTrue("accepting terms is required")
       .required("accepting terms is required"),
   });
-
 
   return (
     <>

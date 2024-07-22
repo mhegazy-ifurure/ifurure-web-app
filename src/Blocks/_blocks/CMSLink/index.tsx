@@ -126,9 +126,11 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       ? { target: "_blank", rel: "noopener noreferrer" }
       : {};
     if (typeof icon == "object") {
-      <Link {...newTabProps} to={href} className={className}>
+     
+      
+   return   <Link {...newTabProps} to={href} className={className}>
         <Media resource={icon} />
-      </Link>;
+      </Link>
     }
 
     return (

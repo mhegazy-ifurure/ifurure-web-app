@@ -2,6 +2,7 @@ import { I18nextProvider } from "react-i18next";
 import i18next from "./utils/i18n";
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
@@ -11,12 +12,17 @@ import Layout from "./Components/Layout/index";
 // import { Suspense } from "react";
 
 function App() {
+
+
+  
   const [docDir, setDocDir] = useState(i18next.dir());
   useEffect(() => {
     setDocDir(i18next.dir());
     document.dir = docDir;
   }, [docDir]);
 
+  console.log(i18next.language);
+  
   return (
     <>
       <QueryClientProvider
@@ -24,10 +30,10 @@ function App() {
           new QueryClient({
             defaultOptions: {
               queries: {
-                refetchOnWindowFocus: false,
-                staleTime: 10000,
-                cacheTime: 600000,
-                retry: 5,
+                refetchOnWindowFocus: true,
+                staleTime: 50,
+                cacheTime: 50000,
+                
               },
             },
           })
@@ -38,6 +44,7 @@ function App() {
             <Layout />
           </BrowserRouter>
         </I18nextProvider>
+        <ReactQueryDevtools/>
       </QueryClientProvider>
     </>
   );

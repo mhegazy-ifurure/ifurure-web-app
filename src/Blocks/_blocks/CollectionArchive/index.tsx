@@ -6,28 +6,37 @@ import React from "react";
 
 import { Card } from "../Card";
 
-import { Post, Project, Service } from "../../../utils/payload-types";
+import { Blog, Post, Project, Service } from "../../../utils/payload-types";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "react-awesome-slider/dist/styles.css";
-import { styles } from "../../../utils/style";
+import { useCollection } from "../../../utils/apiContext";
+import Loading from "../../../Components/Loading";
 
 export type Props = {
   className?: string;
   limit?: number;
   populateBy?: "collection" | "selection";
 
-  relationTo?: "posts" | "projects" | "services";
+  relationTo: "posts" | "projects" | "services" |'blogs';
   showPageRange?: boolean;
   sort?: string;
 };
 
 export const CollectionArchive: React.FC<Props> = (props) => {
   const { className, relationTo, limit } = props;
-
+  const res = useCollection(relationTo)
   const { t } = useTranslation(relationTo);
+  if (res.en.isLoading || res.ar.isLoading) {
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
 
-  const collections: (Service | Post | Project)[] = t("data", {
+
+  const collections: (Service | Post |Blog|Project)[] = t("data", {
     returnObjects: true,
   });
 
@@ -66,7 +75,7 @@ export const CollectionArchive: React.FC<Props> = (props) => {
         <Slider {...settings}>
           {collections.length>0&&collections.map((collection, index) => {
             return (
-              <div key={index} className={styles.paddingX}>
+              <div key={index} className={'p-2'}>
                 <Card  doc={collection} relationTo={relationTo} />
               </div>
             );

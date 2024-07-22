@@ -13,7 +13,7 @@ export type Props = {
   el?: "button" | "link" | "a";
   onClick?: () => void;
   href?: string;
-  icon?:MediaType
+  icon?: MediaType;
   newTab?: boolean | null;
   className?: string;
   type?: "submit" | "button";
@@ -38,11 +38,13 @@ export const Button: React.FC<Props> = ({
     ? { target: "_blank", rel: "noopener noreferrer" }
     : {};
 
- 
-
   const content = (
     <div className={className}>
-      {typeof icon =='object'?<Media  resource={icon}/>:<span>{label}</span>}
+      {icon && typeof icon == "object" ? (
+        <Media resource={icon} />
+      ) : (
+        <span>{label}</span>
+      )}
     </div>
   );
 

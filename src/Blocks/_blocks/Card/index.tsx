@@ -10,7 +10,7 @@ export const Card: React.FC<{
   className?: string;
   hideImagesOnMobile?: boolean;
   title?: string;
-  relationTo?: "projects" | "posts" | "services";
+  relationTo: "posts" | "projects" | "services" |'blogs';
   doc: Project | Post | Service;
   orientation?: "horizontal" | "vertical";
 }> = (props) => {
@@ -30,8 +30,8 @@ export const Card: React.FC<{
     <Media resource={media} className="max-h-56 w-full" />
   </div>
   </CMSLink>
-  <CMSLink url={href}>
-    <h4 className=" block p-2  min-h-16 antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+  <CMSLink  url={href}>
+    <h4 className=" block p-2 line-clamp-3 overflow-hidden   min-h-16 antialiased truncate font-semibold leading-snug tracking-normal text-blue-gray-900">
     {titleToUse}
     </h4>
    

@@ -35,6 +35,7 @@ export const Navbar = () => {
   const { t } = useTranslation("header");
   // @ts-ignore
   const navItems: Header["navItems"][0] = t("data", { returnObjects: true });
+console.log({navItems});
 
   return (
     <>

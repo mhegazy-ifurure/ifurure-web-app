@@ -7,40 +7,27 @@ import Page from "../Page";
 import Loading from "../Loading";
 import { useApi } from "../../utils/apiContext";
 import { useTranslation } from "react-i18next";
-import {
-  Page as PageType,
-  Post,
-  Project,
-  Service,
-} from "../../utils/payload-types";
+import { Page as PageType } from "../../utils/payload-types";
+import CollectionPage from "../CollectionPage";
 
 const Layout = () => {
   const {
-    headerLoading,
-    footerLoading,
-    projectsLoading,
-    postsLoading,
-    servicesLoading,
-    pageLoading,
+    header: headerQuery,
+    footer: footerQuery,
+    pages: pagesQuery,
   } = useApi();
+
   const { t: tPages } = useTranslation("pages");
   const pages: PageType[] = tPages("data", { returnObjects: true });
 
-  const { t: tService } = useTranslation("services");
-  const services: Service[] = tService("data", { returnObjects: true });
-  const { t: tPosts } = useTranslation("posts");
-  const posts: Post[] = tPosts("data", { returnObjects: true });
-  const { t: tProjects } = useTranslation("projects");
-  const projects: Project[] = tProjects("data", { returnObjects: true });
-
   if (
-    headerLoading ||footerLoading||
-    projectsLoading ||
-    postsLoading ||
-    servicesLoading ||
-    pageLoading
+    headerQuery.en.isLoading ||
+    headerQuery.ar.isLoading ||
+    footerQuery.en.isLoading ||
+    footerQuery.ar.isLoading ||
+    pagesQuery.en.isLoading ||
+    pagesQuery.ar.isLoading
   ) {
-
     return <Loading />;
   }
 
@@ -78,9 +65,9 @@ entertainment, health care & more, in Saudi Arabia."
 
       <Navbar />
       <main>
-        {pages && pages.length > 0 && (
-          <>
-            <Routes>
+        <Routes>
+          {pages && pages.length > 0 && (
+            <>
               {pages.map((page, i) => {
                 return (
                   <Route
@@ -90,70 +77,14 @@ entertainment, health care & more, in Saudi Arabia."
                   />
                 );
               })}
-              {posts && posts.length > 0 && (
-                <>
-                  {posts.map((post, i) => {
-                    return (
-                      <Route
-                        key={i}
-                        path={`/posts/${post.slug}`}
-                        Component={() => (
-                          <Page
-                            page={{ hero: post.hero, layout: post.layout }}
-                          />
-                        )}
-                      />
-                    );
-                  })}
-                </>
-              )}
-
-              {services && services.length > 0 && (
-                <>
-                  {services.map((service, i) => {
-                    return (
-                      <Route
-                        key={i}
-                        path={`/services/${service.slug}`}
-                        Component={() => (
-                          <Page
-                            page={{
-                              hero: service.hero,
-                              layout: service.layout,
-                            }}
-                          />
-                        )}
-                      />
-                    );
-                  })}
-                </>
-              )}
-
-              {projects && projects.length && (
-                <>
-                  {projects.map((project, i) => {
-                    return (
-                      <Route
-                        key={i}
-                        path={`/projects/${project.slug}`}
-                        Component={() => (
-                          <Page
-                            page={{
-                              hero: project.hero,
-                              layout: project.layout,
-                            }}
-                          />
-                        )}
-                      />
-                    );
-                  })}
-                </>
-              )}
-            </Routes>
-          </>
-        )}
-
-        {/* <StaticHome /> */}
+            </>
+          )}
+           <Route
+                    
+                    path={`/:collection/:collectionSlug`}
+                    Component={() => <CollectionPage/>}
+                  />
+        </Routes>
       </main>
       <Footer />
     </>
