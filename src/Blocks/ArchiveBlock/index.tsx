@@ -10,21 +10,30 @@ const ArchiveBlock: React.FC<
     id?: string;
   }
 > = (props) => {
-  const { introContent, id, relationTo, populateBy, limit ,backgroundColor } = props;
+  const { introContent, id, relationTo, populateBy, limit, backgroundColor } =
+    props;
 
-
- 
   return (
-    <div id={`block-${id}`} className={styles.padding+` relative ${(backgroundColor=='161616'||backgroundColor=='000937')&&'text-white'}`}  style={{backgroundColor:`#${backgroundColor}`}}>
+    <div
+      id={`block-${id}`}
+      className={
+        styles.padding +
+        ` relative ${
+          (backgroundColor == "161616" || backgroundColor == "000937") &&
+          "text-white"
+        }`
+      }
+      style={{ backgroundColor: `#${backgroundColor}` }}
+    >
       {introContent && (
-        <div >
+        <div>
           <RichText content={introContent} />
         </div>
       )}
       <CollectionArchive
-        populateBy={populateBy||undefined}
+        populateBy={populateBy || undefined}
         relationTo={relationTo}
-        limit={limit||5}
+        limit={limit || 5}
         sort="-publishedAt"
       />
     </div>
